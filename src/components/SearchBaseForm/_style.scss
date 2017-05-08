@@ -1,0 +1,15 @@
+@import "../../scss/variables";
+
+.SearchBaseForm {
+  fieldset {
+    border: none;
+    margin: auto;
+    width: 80%;
+
+    input {
+      font-size: 1rem;
+      line-height: $line-height;
+      width: 80%;
+    }
+  }
+}

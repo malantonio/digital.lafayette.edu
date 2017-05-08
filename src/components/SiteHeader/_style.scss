@@ -1,0 +1,13 @@
+@import "../../scss/variables";
+
+.SiteHeader {
+  background-color: $blue-light;
+  margin: -$body-margin;
+  margin-bottom: $body-margin;
+  padding: $body-margin;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+}
