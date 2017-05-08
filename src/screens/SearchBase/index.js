@@ -1,10 +1,20 @@
 import React from 'react'
+import { get } from '../../store/api'
 
 import SearchBaseForm from '../../components/SearchBaseForm'
 
 class SearchBase extends React.PureComponent {
+  constructor (props) {
+    super(props)
+
+    this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
+  }
+
   handleSearchSubmit (query) {
-    console.log(query)
+    this.props.searchWithQuery(query, (err, res) => {
+      if (err)
+        throw err
+    })
   }
 
   render () {

@@ -14,10 +14,18 @@
   "license": "GPL-3.0",
   "dependencies": {
     "@lafayette-college-libraries/react-blacklight-facet": "^2.0.0",
+    "history": "^4.6.1",
     "prop-types": "^15.5.8",
+    "qs": "^6.4.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.1"
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.0.2",
+    "redux-thunk": "^2.2.0",
+    "xhr": "^2.4.0"
   },
   "devDependencies": {
     "babel-loader": "^7.0.0",

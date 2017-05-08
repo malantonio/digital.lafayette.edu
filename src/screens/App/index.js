@@ -1,9 +1,7 @@
 import React from 'react'
 
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
 
 // components/containers for the main app
 import SiteHeader from '../../components/SiteHeader'
@@ -11,23 +9,35 @@ import SiteHeader from '../../components/SiteHeader'
 // screens (aka pages)
 import Home from '../Home'
 import SearchBase from '../SearchBase'
+import SearchResults from '../SearchResults'
 
-const App = props => (
-  <Router>
-    <main>
-      <SiteHeader />
+import history from '../../history'
 
-      <Route exact path="/" component={Home} />
-      <Route exact path="/search" render={props => {
-        if (props.location.search === '') {
-          return <SearchBase {...props} />
-        }
+class App extends React.PureComponent {
+  render () {
+    return (
+      <ConnectedRouter history={history}>
+        <main>
+          <SiteHeader />
 
-        return <SearchResults {...props} />
-      }} />
-    </main>
-  </Router>
-)
+          <Route exact path="/" component={Home} />
+          <Route path="/search" render={props => {
+            const merged = {
+              ...props,
+              ...this.props,
+            }
 
+            const Component = props.location.search === ''
+              ? SearchBase
+              : SearchResults
+
+            return <Component {...merged} />
+          }} />
+        </main>
+      </ConnectedRouter>
+
+    )
+  }
+}
 
 export default App
