@@ -1,0 +1,39 @@
+{
+  "name": "digital-lafayette-edu",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "lint": "eslint src",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "jest"
+  },
+  "keywords": [],
+  "author": "Adam Malantonio",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@lafayette-college-libraries/react-blacklight-facet": "^2.0.0",
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "jest": "^20.0.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
