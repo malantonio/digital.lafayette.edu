@@ -1,11 +1,14 @@
 import { createAction } from 'redux-actions'
-import { searchWithQuery as _searchWithQuery } from './endpoints'
+import { search } from './endpoints'
+import { parseQs } from '../api'
 
-const buildSearch = (query, facets, range) => ({
-  q: query || '',
-  f: facets || {},
-  range: range || {},
-})
+const searchCallback = dispatch => (err, response) => {
+  if (err) {
+    return dispatch(receivedSearchError(err))
+  }
+
+  return dispatch(receivedSearchResults(response))
+}
 
 export const clearFacet = createAction('clear search.facet')
 export const clearIsFetching = createAction('clear search.isFetching')
@@ -18,16 +21,28 @@ export const setSearch = createAction('set search')
 
 // this makes the assumption that a query search does not
 // inherit facets / page positions
-export const searchWithQuery = query => {
-  return (dispatch, getState, api) => {
-    dispatch(setSearch({query}))
+export const searchWithQuery = query => dispatch => {
+  dispatch(setSearch({query}))
 
-    return _searchWithQuery(query, (err, response) => {
-      if (err) {
-        return dispatch(receivedSearchError(err))
-      }
+  return search({
+    query,
+    callback: searchCallback(dispatch)
+  })
+}
 
-      dispatch(receivedSearchResults(response))
-    })
+export const searchWithQueryString = qs => dispatch => {
+  const { q, f, range, ...opts } = parseQs(qs)
+  const searchObj = {
+    ...opts,
+    query: q,
+    facets: f,
+    range,
   }
+
+  dispatch(setSearch(searchObj))
+
+  return search({
+    ...searchObj,
+    callback: searchCallback(dispatch)
+  })
 }

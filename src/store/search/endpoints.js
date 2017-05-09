@@ -4,7 +4,7 @@ import history from '../../history'
 const SEARCH_PATH = '/catalog'
 const PER_PAGE_LIMIT = 50
 
-function search (query, facets, range, opts, callback) {
+export function search ({query, facets, range, callback, ...opts}) {
   // set some defaults
   opts = {
     page: 1,
@@ -38,14 +38,4 @@ function search (query, facets, range, opts, callback) {
 
   const url = `${SEARCH_PATH}?${baseQs}&${optsQs}`
   return get(url, callback)
-}
-
-export function searchWithQuery (query, callback) {
-  return search(
-    query,
-    null, // facets
-    null, // range
-    null, // opts
-    callback
-  )
 }
