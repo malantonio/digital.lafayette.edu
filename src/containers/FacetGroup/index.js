@@ -4,17 +4,21 @@ import { FacetList } from '@lafayette-college-libraries/react-blacklight-facet'
 
 const propTypes = {
   blacklist: PropTypes.arrayOf(PropTypes.string),
+  components: PropTypes.object,
+  defaultComponent: PropTypes.func,
   facets: PropTypes.array,
   onRemoveSelectedItem: PropTypes.func,
   onSelectItem: PropTypes.func,
-  selectedFacets: PropTypes.object,
+  selected: PropTypes.object,
   showEmpty: PropTypes.bool,
   whitelist: PropTypes.arrayOf(PropTypes.string),
 }
 
 const defaultProps = {
   blacklist: [],
-  selectedFacets: {},
+  components: {},
+  defaultComponent: FacetList,
+  selected: {},
   showEmpty: false,
   whitelist: [],
 }
@@ -37,6 +41,8 @@ class FacetGroup extends React.PureComponent {
 
     const {
       blacklist,
+      components,
+      defaultComponent,
       onRemoveSelectedItem,
       onSelectItem,
       whitelist,
@@ -54,14 +60,28 @@ class FacetGroup extends React.PureComponent {
       }
     }
 
-    const props = {
-      onRemoveSelectedItem,
-      onSelectItem,
-      key: `${index}-${facet.name}`,
+    const selected = this.props.selected[facet.name] || []
+    const hasSelectedItems = selected.length > 0
+    let { items } = facet
+
+    if (hasSelectedItems === true) {
+      const selectedVals = selected.map(s => s.value)
+      items = items.filter(i => selectedVals.indexOf(i.value) === -1)
     }
 
+    const props = {
+      items,
+      key: `${index}-${facet.name}`,
+      onRemoveSelectedItem,
+      onSelectItem,
+      open: hasSelectedItems,
+      selectedItems: [].concat(selected),
+    }
+
+    const Component = components[facet.name] || defaultComponent
+
     return (
-      <FacetList
+      <Component
         {...facet}
         {...props}
       />

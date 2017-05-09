@@ -1,5 +1,9 @@
 import React from 'react'
 import FacetGroup from '../../containers/FacetGroup'
+import {
+  FacetList,
+  FacetRangeLimitDate,
+} from '@lafayette-college-libraries/react-blacklight-facet'
 
 class SearchResults extends React.PureComponent {
   componentDidMount () {
@@ -27,13 +31,33 @@ class SearchResults extends React.PureComponent {
       return <div>no docs found</div>
     }
 
+    const dateRanges = [
+      'date_original_dtsi',
+      'date_artifact_upper_dtsi',
+      'date_artifact_lower_dtsi',
+      'date_image_upper_dtsi',
+      'date_image_lower_dtsi',
+    ].reduce((o, n) => ((o[n] = FacetRangeLimitDate) && o), {})
+
+    const selected = {
+      ...this.props.search.facets,
+      ...this.props.search.range,
+    }
+
     return (
       <div style={{display: 'flex'}}>
         <section key="facets" style={{width:'33%'}}>
           <FacetGroup
+            components={dateRanges}
+            defaultComponent={FacetList}
             facets={facets}
-            onRemoveSelectedItem={console.log.bind(console, 'remove')}
-            onSelectItem={console.log.bind(console, 'select')}
+            onRemoveSelectedItem={(facet, item) => {
+              this.props.toggleFacetItem(facet, item, false)
+            }}
+            onSelectItem={(facet, item) => {
+              this.props.toggleFacetItem(facet, item, true)
+            }}
+            selected={selected}
           />
         </section>
 

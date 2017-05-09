@@ -1,4 +1,6 @@
 import { createAction } from 'redux-actions'
+import isEqual from 'lodash.isequal'
+
 import { search } from './endpoints'
 import { parseQs } from '../api'
 
@@ -10,13 +12,14 @@ const searchCallback = dispatch => (err, response) => {
   return dispatch(receivedSearchResults(response))
 }
 
-export const clearFacet = createAction('clear search.facet')
+const hasProperty = (obj, prop) => (
+  Object.prototype.hasOwnProperty.call(obj, prop)
+)
+
 export const clearIsFetching = createAction('clear search.isFetching')
 export const clearSearch = createAction('clear search')
 export const receivedSearchError = createAction('[error] search')
 export const receivedSearchResults = createAction('received search results')
-export const setFacet = createAction('set search.facet')
-export const setIsFetching = createAction('set search.isFetching')
 export const setSearch = createAction('set search')
 
 // this makes the assumption that a query search does not
@@ -31,11 +34,11 @@ export const searchWithQuery = query => dispatch => {
 }
 
 export const searchWithQueryString = qs => dispatch => {
-  const { q, f, range, ...opts } = parseQs(qs)
+  const { q, f, range, ...meta } = parseQs(qs)
   const searchObj = {
-    ...opts,
-    query: q,
     facets: f,
+    meta,
+    query: q,
     range,
   }
 
@@ -44,5 +47,115 @@ export const searchWithQueryString = qs => dispatch => {
   return search({
     ...searchObj,
     callback: searchCallback(dispatch)
+  })
+}
+
+export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => {
+
+  const { name, label } = facet
+
+  const isRange = item.type && item.type === 'range'
+
+  const searchObj = {
+    // defaults
+    query: '',
+    facets: {},
+    range: {},
+    meta: {},
+
+    // current
+    ...getState().search,
+  }
+
+  if (isRange) {
+    if (toggle === true) {
+      searchObj.range[name] = item
+    }
+
+    else {
+      delete searchObj.range[name]
+    }
+  }
+
+  else {
+    let dirty = false
+    let target
+
+    // selecting facet
+    if (toggle === true) {
+      const { facets } = searchObj
+      let shouldUpdate = true
+
+      // is the facet already being used?
+      // check for duplicate values + don't update if it's already there
+      if (hasProperty(facets, name)) {
+        for (let i = 0; i < facets[name].length; i++) {
+          const current = facets[name][i]
+
+          // this is probably a bit overkill but acts as a failsafe if, for
+          // some reason, the facet-items in state differ from the ones
+          // returned from the api
+          if (hasProperty(current, 'value') && hasProperty(item, 'value')) {
+            if (isEqual(current.value, item.value)) {
+              shouldUpdate = false
+              break
+            }
+          } else {
+            if (isEqual(current, item)) {
+              shouldUpdate = false
+              break
+            }
+          }
+        }
+      }
+
+      if (shouldUpdate === true) {
+        target = [].concat(facets[name], item).filter(Boolean)
+        dirty = true
+      }
+    }
+
+    // removing facet
+    // (we'll skip a catch-all `else` case and let
+    // `dirty === false` result in a no-op)
+    else if (searchObj.facets[name] && toggle === false) {
+      target = searchObj.facets[name].filter(i => {
+
+        // see above for comment
+        if (hasProperty(i, 'value') && hasProperty(item, 'value')) {
+          return !isEqual(i.value, item.value)
+        }
+
+        else {
+          return !isEqual(i, item)
+        }
+      })
+
+      if (searchObj.facets[name].length > target.length) {
+        dirty = true
+      }
+    }
+
+    if (dirty === false) {
+      return
+    }
+
+    searchObj.facets = {
+      ...search.facets,
+      [name]: target,
+    }
+  } // end `if (item.type === 'target') / else` block
+
+  // reset the page count
+  searchObj.meta = {
+    ...searchObj.meta,
+    page: 1,
+  }
+
+  dispatch(setSearch(searchObj))
+
+  return search({
+    ...searchObj,
+    callback: searchCallback(dispatch),
   })
 }

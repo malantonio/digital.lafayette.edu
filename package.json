@@ -13,8 +13,10 @@
   "author": "Adam Malantonio",
   "license": "GPL-3.0",
   "dependencies": {
-    "@lafayette-college-libraries/react-blacklight-facet": "^2.0.0",
+    "@lafayette-college-libraries/react-blacklight-facet": "^2.0.2",
+    "debug": "^2.6.6",
     "history": "^4.6.1",
+    "lodash.isequal": "^4.5.0",
     "prop-types": "^15.5.8",
     "qs": "^6.4.0",
     "react": "^15.5.4",

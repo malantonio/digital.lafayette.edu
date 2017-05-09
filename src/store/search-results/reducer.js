@@ -12,8 +12,8 @@ export default handleActions({
     ...state,
     docs: action.payload.docs,
     facets: action.payload.facets,
-    meta: {
+    // meta: {
 
-    },
+    // },
   })
 }, initialState)
