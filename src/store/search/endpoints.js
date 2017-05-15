@@ -19,6 +19,10 @@ const flattenValues = obj => {
 }
 
 export function search ({query, facets, range, meta, callback}) {
+  if (!meta) {
+    meta = {}
+  }
+
   // set some defaults
   const opts = {
     page: meta.page || 1,

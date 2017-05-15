@@ -1,8 +1,7 @@
 import { handleActions } from 'redux-actions'
 import * as search from './actions'
 
-// ~*~ wooof ~*~ //
-import createRangeFacetItem from '@lafayette-college-libraries/react-blacklight-facet/lib/FacetRangeLimitDate/create-range-facet-item'
+import { createRangeFacetItem } from './utils'
 
 const createFacetDictionary = facets => facets.reduce((out, facet, index) => {
   out[facet.name] = index
@@ -74,7 +73,6 @@ export default handleActions({
 
         range = update
       }
-
     }
 
     return {

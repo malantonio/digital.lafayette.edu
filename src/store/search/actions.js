@@ -1,8 +1,11 @@
 import { createAction } from 'redux-actions'
 import isEqual from 'lodash.isequal'
+import Debug from 'debug'
 
 import { search } from './endpoints'
 import { parseQs } from '../api'
+
+const debug = Debug('digital:store:search/actions')
 
 const searchCallback = dispatch => (err, response) => {
   if (err) {
@@ -25,6 +28,8 @@ export const setSearch = createAction('set search')
 // this makes the assumption that a query search does not
 // inherit facets / page positions
 export const searchWithQuery = query => dispatch => {
+  debug('searching with query: %s', query)
+
   dispatch(setSearch({query}))
 
   return search({
@@ -34,6 +39,10 @@ export const searchWithQuery = query => dispatch => {
 }
 
 export const searchWithQueryString = qs => dispatch => {
+  const parsed = parseQs(qs)
+
+  debug('searching with queryString: %o', parsed)
+
   const { q, f, range, ...meta } = parseQs(qs)
   const searchObj = {
     facets: f,
@@ -51,9 +60,9 @@ export const searchWithQueryString = qs => dispatch => {
 }
 
 export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => {
+  debug('toggling `%s:%s` %s', facet.name, item.label, toggle ? 'on' : 'off')
 
   const { name, label } = facet
-
   const isRange = item.type && item.type === 'range'
 
   const searchObj = {
