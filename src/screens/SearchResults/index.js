@@ -5,6 +5,8 @@ import {
   FacetRangeLimitDate,
 } from '@lafayette-college-libraries/react-blacklight-facet'
 
+import ResultGallery from '../../containers/ResultGallery'
+
 class SearchResults extends React.PureComponent {
   componentDidMount () {
     const { isFetching } = this.props.search.meta
@@ -62,14 +64,7 @@ class SearchResults extends React.PureComponent {
         </section>
 
         <section key="results" style={{width:'66%'}}>
-          <ul>
-            {docs.map((d, i) => (
-              <li key={`${d}-${d.id}`}>
-                <span style={{color: 'pink'}}>{d.id}</span>
-                {d.title}
-              </li>
-            ))}
-          </ul>
+          <ResultGallery docs={docs} />
         </section>
       </div>
     )

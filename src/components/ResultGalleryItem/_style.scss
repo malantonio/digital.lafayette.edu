@@ -1,0 +1,16 @@
+.ResultGalleryItem {
+  $padding: 8px;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  height: $result-gallery-item-width;
+  justify-content: center;
+  padding: $padding;
+  width: $result-gallery-item-width;
+
+  img {
+    $size: $result-gallery-item-width / 1.25;
+    max-height: $size;
+    max-width: $size;
+  }
+}

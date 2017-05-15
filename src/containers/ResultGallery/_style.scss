@@ -1,0 +1,8 @@
+.ResultGallery {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    color: $body-color;
+  }
+}
