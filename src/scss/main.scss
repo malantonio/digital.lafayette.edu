@@ -7,6 +7,8 @@
 @import "../containers/ResultGallery/style";
 @import "../components/ResultGalleryItem/style";
 
+@import "../components/Breadcrumb/style";
+
 // options for 'x'-es that aren't the letter 'x'
 // https://en.wikipedia.org/wiki/X_mark
 $selected-list-remove-text-content: "\00D7";

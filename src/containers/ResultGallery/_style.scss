@@ -1,6 +1,7 @@
 .ResultGallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   a {
     color: $body-color;

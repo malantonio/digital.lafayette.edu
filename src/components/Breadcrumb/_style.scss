@@ -1,0 +1,59 @@
+@import "../../scss/variables";
+
+.Breadcrumb {
+  $background-color: $white;
+  $border-size: 1px;
+  $border-style: solid;
+  $border-default: $border-size $border-style #ccc;
+  $border-hover-color: $red-light;
+  $border-hover-text-color: $white;
+  $border-hover: $border-size $border-style $border-hover-color;
+  $border-radius: 10px;
+  $button-width: 25px;
+
+  background-color: $background-color;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+  display: inline-block;
+  font-size: 0.9rem;
+  margin: 5px 10px;
+  padding: 6px 8px;
+  padding-right: $button-width + 10px;
+  position: relative;
+
+  &.is-hovered {
+    border-color: $border-hover-color;
+
+    .Breadcrumb-remove-btn {
+      background-color: $border-hover-color;
+      color: $border-hover-text-color;
+    }
+  }
+
+  &-facet {
+    color: #999;
+  }
+
+  &-item {
+    font-weight: bold;
+  }
+
+  &-remove-btn {
+    $corner-radius: $border-radius - 1px;
+
+    appearance: none;
+    background-color: $background-color;
+    border: $border-size $border-style transparent;
+    border-bottom-right-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+    color: #222;
+    font-weight: bold;
+    height: 100%;
+    margin: 0;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $button-width;
+  }
+}
