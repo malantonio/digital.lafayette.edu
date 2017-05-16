@@ -97,7 +97,7 @@ export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => 
 
   if (isRange) {
     if (toggle === true) {
-      searchObj.range[name] = item
+      searchObj.range[name] = [item]
     }
 
     else {

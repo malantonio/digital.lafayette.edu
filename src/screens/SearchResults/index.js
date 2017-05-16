@@ -5,8 +5,9 @@ import {
   FacetRangeLimitDate,
 } from '@lafayette-college-libraries/react-blacklight-facet'
 
-import BreadcrumbContainer from '../../containers/BreadcrumbContainer'
+import LoadingModal from '../../components/LoadingModal'
 
+import BreadcrumbContainer from '../../containers/BreadcrumbContainer'
 import ResultsContainer from '../../containers/ResultsContainer'
 import ResultsGallery from '../../containers/ResultsGallery'
 
@@ -17,6 +18,7 @@ class SearchResults extends React.PureComponent {
     super(props)
 
     this.maybeBuildFacetDictionary = this.maybeBuildFacetDictionary.bind(this)
+    this.renderFacetSidebar = this.renderFacetSidebar.bind(this)
 
     this.state = {
 
@@ -71,20 +73,12 @@ class SearchResults extends React.PureComponent {
     this.facetDictionary = utils.createFacetDictionary(nextResults.facets)
   }
 
-  render () {
-    const { isFetching } = this.props.search.meta
+  renderFacetSidebar () {
+    const { search, searchResults, toggleFacetItem } = this.props
+    const { facets } = searchResults
 
-    // TODO: create 'Fetching' modal
-    if (isFetching) {
-      return <div>f e t c h i n g . . .</div>
-    }
-
-    const { searchResults, search } = this.props
-    const { docs, facets } = searchResults
-
-    // TODO: 'redirect' to no-docs-found screen
-    if (!docs || docs.length === 0) {
-      return <div>no docs found</div>
+    if (facets === undefined || facets.length === 0) {
+      return null
     }
 
     const dateRanges = [
@@ -98,20 +92,37 @@ class SearchResults extends React.PureComponent {
     const selected = { ...search.facets, ...search.range }
 
     return (
+      <FacetGroup
+        components={dateRanges}
+        defaultComponent={FacetList}
+        facets={facets}
+        onRemoveSelectedItem={(facet, item) => {
+          this.props.toggleFacetItem(facet, item, false)
+        }}
+        onSelectItem={(facet, item) => {
+          this.props.toggleFacetItem(facet, item, true)
+        }}
+        selected={selected}
+      />
+    )
+  }
+
+  render () {
+    const { searchResults, search } = this.props
+    const { isFetching } = search.meta
+    const { docs, facets } = searchResults
+
+    // TODO: 'redirect' to no-docs-found screen
+    if (docs !== undefined && docs.length === 0) {
+      return <div>no docs found</div>
+    }
+
+    return (
       <div style={{display: 'flex'}}>
+        <LoadingModal visible={isFetching} />
+
         <section key="facets" style={{width:'33%'}}>
-          <FacetGroup
-            components={dateRanges}
-            defaultComponent={FacetList}
-            facets={facets}
-            onRemoveSelectedItem={(facet, item) => {
-              this.props.toggleFacetItem(facet, item, false)
-            }}
-            onSelectItem={(facet, item) => {
-              this.props.toggleFacetItem(facet, item, true)
-            }}
-            selected={selected}
-          />
+          {this.renderFacetSidebar()}
         </section>
 
         <section key="results" style={{width:'66%'}}>
@@ -138,6 +149,7 @@ class SearchResults extends React.PureComponent {
             searchResults={searchResults}
           />
         </section>
+
       </div>
     )
   }

@@ -1,0 +1,17 @@
+.LoadingModal {
+  &.Modal-container {
+    align-items: center;
+    bottom: 70%;
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+    left: 25%;
+    padding: 0;
+    right: 25%;
+    top: 15%;
+  }
+
+  &.Modal-overlay {
+    background-color: rgba(#000, 0.285);
+  }
+}
