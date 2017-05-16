@@ -73,15 +73,9 @@ class BreadcrumbContainer extends React.PureComponent {
   }
 
   render () {
-    const {
-      dictionary,
-      facets,
-      onRemoveBreadcrumb,
-      query,
-      range,
-    } = this.props
-
-    let fkeys, rkeys
+    const { facets, query, range } = this.props
+    const fkeys = Object.keys(facets)
+    const rkeys = Object.keys(range)
 
     return (
       <div className="BreadcrumbContainer">
@@ -92,13 +86,13 @@ class BreadcrumbContainer extends React.PureComponent {
         }
 
         {
-          (fkeys = Object.keys(facets)).length > 0
+          fkeys.length > 0
           ? this.renderBreadcrumbs(fkeys, facets)
           : null
         }
 
         {
-          (rkeys = Object.keys(range)).length > 0
+          rkeys.length > 0
           ? this.renderBreadcrumbs(rkeys, range)
           : null
         }

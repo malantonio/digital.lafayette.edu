@@ -6,7 +6,11 @@ import {
 } from '@lafayette-college-libraries/react-blacklight-facet'
 
 import BreadcrumbContainer from '../../containers/BreadcrumbContainer'
-import ResultGallery from '../../containers/ResultGallery'
+
+import ResultsContainer from '../../containers/ResultsContainer'
+import ResultsGallery from '../../containers/ResultsGallery'
+
+import * as utils from '../../utils'
 
 class SearchResults extends React.PureComponent {
   constructor (props) {
@@ -64,12 +68,7 @@ class SearchResults extends React.PureComponent {
       return
     }
 
-    this.facetDictionary = nextResults.facets.reduce((out, facet) => {
-      const { name, label } = facet
-      out[name] = { name, label }
-
-      return out
-    }, {})
+    this.facetDictionary = utils.createFacetDictionary(nextResults.facets)
   }
 
   render () {
@@ -80,7 +79,8 @@ class SearchResults extends React.PureComponent {
       return <div>f e t c h i n g . . .</div>
     }
 
-    const { docs, facets } = this.props.searchResults
+    const { searchResults, search } = this.props
+    const { docs, facets } = searchResults
 
     // TODO: 'redirect' to no-docs-found screen
     if (!docs || docs.length === 0) {
@@ -95,10 +95,7 @@ class SearchResults extends React.PureComponent {
       'date_image_lower_dtsi',
     ].reduce((o, n) => ((o[n] = FacetRangeLimitDate) && o), {})
 
-    const selected = {
-      ...this.props.search.facets,
-      ...this.props.search.range,
-    }
+    const selected = { ...search.facets, ...search.range }
 
     return (
       <div style={{display: 'flex'}}>
@@ -129,11 +126,17 @@ class SearchResults extends React.PureComponent {
                 this.props.toggleFacetItem(facet, item, false)
               }
             }}
-            query={this.props.search.query}
-            facets={this.props.search.facets}
-            range={this.props.search.range}
+            query={search.query}
+            facets={search.facets}
+            range={search.range}
           />
-          <ResultGallery docs={docs} />
+
+          <ResultsContainer
+            component={ResultsGallery}
+            search={search}
+            searchAtPage={this.props.searchAtPage}
+            searchResults={searchResults}
+          />
         </section>
       </div>
     )

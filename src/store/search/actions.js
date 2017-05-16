@@ -25,6 +25,25 @@ export const receivedSearchError = createAction('[error] search')
 export const receivedSearchResults = createAction('received search results')
 export const setSearch = createAction('set search')
 
+export const searchAtPage = page => (dispatch, getState) => {
+  debug('fetching page %d', page)
+
+  const { meta, ...state } = getState().search
+  const updated = {
+    ...state,
+    meta: {
+      ...meta,
+      page,
+    }
+  }
+
+  dispatch(setSearch(updated))
+
+  updated.callback = searchCallback(dispatch)
+
+  return search(updated)
+}
+
 // this makes the assumption that a query search does not
 // inherit facets / page positions
 export const searchWithQuery = query => dispatch => {
@@ -62,7 +81,7 @@ export const searchWithQueryString = qs => dispatch => {
 export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => {
   debug('toggling `%s:%s` %s', facet.name, item.label, toggle ? 'on' : 'off')
 
-  const { name, label } = facet
+  const { name } = facet
   const isRange = item.type && item.type === 'range'
 
   const searchObj = {

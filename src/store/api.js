@@ -28,6 +28,10 @@ const request = (method, path, body, opts, callback) => {
     }
   }
 
+  if (callback === undefined) {
+    callback = () => {}
+  }
+
   const requestOpts = {
     body,
     json: true,

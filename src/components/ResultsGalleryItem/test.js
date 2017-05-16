@@ -12,7 +12,7 @@ const SELECTORS = {
   title: '.ResultGalleryItem-title'
 }
 
-describe('<GalleryItem />', () => {
+describe('<ResultsGalleryItem />', () => {
   describe(`the ${SELECTORS.title} label`, () => {
     it('renders the first entry if `props.title` is an array', () => {
       const title = ['cool cats', 'rad dogs']

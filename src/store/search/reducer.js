@@ -27,13 +27,7 @@ export default handleActions({
 
   [search.receivedSearchResults]: (state, action) => {
     const { pages } = action.payload
-
-    const {
-      current_page,
-      offset_value,
-      total_count,
-      total_pages,
-    } = pages
+    const { current_page, offset_value } = pages
 
     let { facets, range } = state
     const fkeys = Object.keys(facets)

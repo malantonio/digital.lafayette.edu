@@ -11,7 +11,7 @@ import App from './screens/App'
 import './scss/main.scss'
 
 if (!process.env.API_BASE_URL) {
-  console.warn('No `API_BASE_URL` variable set')
+  throw Error('No `API_BASE_URL` variable set')
 }
 
 const mapStateToProps = state => ({

@@ -1,6 +1,4 @@
 import React from 'react'
-import { get } from '../../store/api'
-
 import SearchBaseForm from '../../components/SearchBaseForm'
 
 class SearchBase extends React.PureComponent {
@@ -11,10 +9,7 @@ class SearchBase extends React.PureComponent {
   }
 
   handleSearchSubmit (query) {
-    this.props.searchWithQuery(query, (err, res) => {
-      if (err)
-        throw err
-    })
+    this.props.searchWithQuery(query)
   }
 
   render () {

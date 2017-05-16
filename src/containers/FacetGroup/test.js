@@ -114,7 +114,7 @@ describe('<FacetGroup />', () => {
 
   describe('`props.whitelist`', () => {
     it('prevents some facets from rendering', () => {
-      const i = facets.length - 1;
+      const i = facets.length - 1
       const whitelist = [facets[i].name]
       const $el = wrapEl({whitelist})
 

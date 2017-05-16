@@ -2,13 +2,13 @@
 // `results.response.doc` array of objects
 import React from 'react'
 
-export default function ResultGalleryItem (props) {
+export default function ResultsGalleryItem (props) {
   const { thumbnail_path, title, id } = props
 
   return (
-    <div className="ResultGalleryItem">
+    <div className="ResultsGalleryItem">
       <img src={thumbnail_path} />
-      <p className="ResultGalleryItem-title">
+      <p className="ResultsGalleryItem-title">
         {
           // default way to store a title is as an array
           // so we'll just use the first one
