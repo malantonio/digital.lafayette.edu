@@ -1,0 +1,21 @@
+.Toggle {
+  border: 1px solid #b0b0b0;
+  border-style: solid;
+  display: inline-block;
+  font-size: 0.9em;
+
+  &-option {
+    background-color: #efefef;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: normal;
+    min-width: 5em;
+    padding: 5px;
+    text-align: center;
+
+    &.is-selected {
+      background-color: #b0b0b0;
+      cursor: auto;
+    }
+  }
+}

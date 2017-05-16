@@ -1,7 +1,10 @@
 import { handleActions } from 'redux-actions'
+import Debug from 'debug'
 import * as search from './actions'
 
 import { createRangeFacetItem } from './utils'
+
+const debug = Debug('digital:store/search/reducer')
 
 const createFacetDictionary = facets => facets.reduce((out, facet, index) => {
   out[facet.name] = index
@@ -11,6 +14,7 @@ const createFacetDictionary = facets => facets.reduce((out, facet, index) => {
 export const initialState = {
   meta: {
     isFetching: false,
+    needsHydration: true,
   },
 }
 
@@ -29,7 +33,8 @@ export default handleActions({
     const { pages } = action.payload
     const { current_page, offset_value } = pages
 
-    let { facets, range } = state
+    let { facets, range, meta } = {...state}
+
     const fkeys = Object.keys(facets)
     const rkeys = Object.keys(range)
 
@@ -38,8 +43,13 @@ export default handleActions({
     // and need the full details of the facets to be added
     // to the state)
     if (fkeys.length !== 0) {
-      const needsHydration = typeof facets[fkeys[0]][0] === 'string'
+      const needsHydration = (
+        meta.needsHydration || typeof facets[fkeys[0]][0] === 'string'
+      )
+
       if (needsHydration) {
+        debug('rehydrating facets')
+
         const resultFacets = action.payload.facets
         const dict = createFacetDictionary(resultFacets)
 
@@ -57,8 +67,13 @@ export default handleActions({
     }
 
     if (rkeys.length !== 0) {
-      const needsHydration = range[rkeys[0]].label === undefined
+      const needsHydration = (
+        meta.needsHydration || range[rkeys[0]].label === undefined
+      )
+
       if (needsHydration) {
+        debug('rehydrating range')
+
         const update = rkeys.reduce((out, key) => {
           const orig = range[key]
           out[key] = [createRangeFacetItem(key, orig.begin, orig.end)]
@@ -77,6 +92,7 @@ export default handleActions({
         atEnd: pages && pages['last_page?'],
         currentPage: current_page,
         isFetching: false,
+        needsHydration: false,
         offset: offset_value,
       },
     }
@@ -88,6 +104,7 @@ export default handleActions({
     return {
       facets: facets || {},
       meta: {
+        ...state.meta,
         isFetching: true,
         offset: 0,
         page: opts.page || 1,

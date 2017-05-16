@@ -1,4 +1,6 @@
 import React from 'react'
+import Debug from 'debug'
+
 import FacetGroup from '../../containers/FacetGroup'
 import {
   FacetList,
@@ -7,21 +9,44 @@ import {
 
 import LoadingModal from '../../components/LoadingModal'
 
-import BreadcrumbContainer from '../../containers/BreadcrumbContainer'
+import ResultsHeader from '../../containers/ResultsHeader'
 import ResultsContainer from '../../containers/ResultsContainer'
 import ResultsGallery from '../../containers/ResultsGallery'
 
 import * as utils from '../../utils'
 
+const debug = Debug('digital:screens/SearchResults')
+
+const SimpleResultsList = props => (
+  <dl>
+  {props.docs.reduce((o, d) => (
+    o.concat([
+      <dt key={`dt-${d.id}`}>{d.id}</dt>,
+      <dd key={`dd-${d.id}`}>{d.title[0]}</dd>
+    ])
+  ), [])}
+  </dl>
+)
+
 class SearchResults extends React.PureComponent {
   constructor (props) {
     super(props)
 
+    this.getResultContainerComponent = this.getResultContainerComponent.bind(this)
+    this.handleRemoveBreadcrumb = this.handleRemoveBreadcrumb.bind(this)
+    this.handleToggleResultsContainer = this.handleToggleResultsContainer.bind(this)
     this.maybeBuildFacetDictionary = this.maybeBuildFacetDictionary.bind(this)
     this.renderFacetSidebar = this.renderFacetSidebar.bind(this)
+    this.renderResultsHeader = this.renderResultsHeader.bind(this)
+    this.renderResults = this.renderResults.bind(this)
+
+    this.resultsContainers = {
+      'gallery': ResultsGallery,
+      'list': SimpleResultsList,
+    }
 
     this.state = {
-
+      resultsContainer: 'list',
     }
   }
 
@@ -45,6 +70,27 @@ class SearchResults extends React.PureComponent {
     this.maybeBuildFacetDictionary(nextProps)
   }
 
+  getResultContainerComponent () {
+    return this.resultsContainers[this.state.resultsContainer]
+  }
+
+  handleRemoveBreadcrumb (facet, item) {
+    if (facet.type === 'query') {
+      this.props.searchWithQuery('')
+    }
+
+    else {
+      this.props.toggleFacetItem(facet, item, false)
+    }
+  }
+
+  handleToggleResultsContainer (which) {
+    debug(`setting ResultsContainer to ${which}`)
+    this.setState({
+      resultsContainer: which,
+    })
+  }
+
   // constructs a key/val store of facet info. this is primarily used in
   // generating breadcrumbs with nice labels. will build if:
   //
@@ -58,19 +104,15 @@ class SearchResults extends React.PureComponent {
       return
     }
 
-    const { docs, facets } = this.props.searchResults
+    const { facets } = nextProps.searchResults
 
-    if (docs === undefined && facets === undefined) {
+    if (facets === undefined) {
       return
     }
 
-    const nextResults = nextProps.searchResults
+    debug('building FacetDictionary')
 
-    if (nextResults.facets === undefined) {
-      return
-    }
-
-    this.facetDictionary = utils.createFacetDictionary(nextResults.facets)
+    this.facetDictionary = utils.createFacetDictionary(facets)
   }
 
   renderFacetSidebar () {
@@ -107,6 +149,46 @@ class SearchResults extends React.PureComponent {
     )
   }
 
+  renderResultsHeader () {
+    const { search } = this.props
+
+    if (search.facets === undefined || search.meta.needsHydration === true) {
+      return null
+    }
+
+    const toggleOptions = {
+      onChange: this.handleToggleResultsContainer,
+      values: Object.keys(this.resultsContainers),
+      value: this.state.resultsContainer,
+    }
+
+    return (
+      <ResultsHeader
+        {...search}
+        dictionary={this.facetDictionary}
+        onRemoveBreadcrumb={this.handleRemoveBreadcrumb}
+        viewToggleOptions={toggleOptions}
+      />
+    )
+  }
+
+  renderResults () {
+    const { search, searchResults, searchAtPage } = this.props
+
+    if (searchResults.docs === undefined) {
+      return null
+    }
+
+    return (
+      <ResultsContainer
+        component={this.getResultContainerComponent()}
+        search={search}
+        searchAtPage={searchAtPage}
+        searchResults={searchResults}
+      />
+    )
+  }
+
   render () {
     const { searchResults, search } = this.props
     const { isFetching } = search.meta
@@ -126,28 +208,8 @@ class SearchResults extends React.PureComponent {
         </section>
 
         <section key="results" style={{width:'66%'}}>
-          <BreadcrumbContainer
-            dictionary={this.facetDictionary}
-            onRemoveBreadcrumb={(facet, item) => {
-              if (facet.type === 'query') {
-                this.props.searchWithQuery('')
-              }
-
-              else {
-                this.props.toggleFacetItem(facet, item, false)
-              }
-            }}
-            query={search.query}
-            facets={search.facets}
-            range={search.range}
-          />
-
-          <ResultsContainer
-            component={ResultsGallery}
-            search={search}
-            searchAtPage={this.props.searchAtPage}
-            searchResults={searchResults}
-          />
+          {this.renderResultsHeader()}
+          {this.renderResults()}
         </section>
 
       </div>

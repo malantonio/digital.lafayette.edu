@@ -19,7 +19,6 @@ const hasProperty = (obj, prop) => (
   Object.prototype.hasOwnProperty.call(obj, prop)
 )
 
-export const clearIsFetching = createAction('clear search.isFetching')
 export const clearSearch = createAction('clear search')
 export const receivedSearchError = createAction('[error] search')
 export const receivedSearchResults = createAction('received search results')

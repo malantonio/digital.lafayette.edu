@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import Debug from 'debug'
 import Breadcrumb from '../../components/Breadcrumb'
+
+const debug = Debug('digital:containers/BreadcrumbContainer')
 
 const propTypes = {
   // key/val store of facet names => facet values
@@ -28,6 +30,10 @@ const defaultProps = {
 class BreadcrumbContainer extends React.PureComponent {
   constructor (props) {
     super(props)
+
+    if (props.dictionary === defaultProps.dictionary) {
+      debug('No facet dictionary provided')
+    }
 
     this.renderBreadcrumbs = this.renderBreadcrumbs.bind(this)
   }

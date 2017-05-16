@@ -15,50 +15,61 @@ export function getApiPath (path) {
   return `${process.env.API_BASE_URL}${path}`
 }
 
-export class Storage {
+export class Store {
   constructor (opts) {
-    if (typeof opts === 'string') {
-      this.key = opts
+    if (!opts) {
       opts = {}
     }
 
     this.store = opts.store || window.sessionStorage
-    this.staleTime = opts.staleTime || (1000 * 60 * 5)
-    this.timestampkey = opts.timestampKey || '__timestamp__'
+    this.__internal_key__ = 'dig@laf'
   }
 
   clear () {
-    this.store.removeItem(this.key)
+    this.store.removeItem(this.__internal_key__)
     return null
   }
 
-  get () {
+  get (key) {
     try {
-      const res = this.store.getItem(this.key)
+      const res = this.store.getItem(this.__internal_key__)
       const parsed = JSON.parse(res)
-      const now = Date.now()
 
-      if (parsed[this.timestampKey] + staleTime < now) {
-        return this.clear()
+      if (key === undefined) {
+        return parsed
       }
 
-      delete parsed[this.timestampKey]
-      return parsed
+      return parsed[key]
     }
 
     catch (e) {
-      // return this.clear()
       return null
     }
   }
 
-  set (obj) {
-    const results = {
-      ...obj,
-      [this.timestampKey]: Date.now()
+  set (key, val) {
+    const dict = this.get()
+
+    // probably not the best strategy?
+    if (dict === null) {
+      throw Error('Problem parsing storage')
     }
 
-    const strung = JSON.stringify(results)
-    this.store.setItem(key, strung)
+    if (Array.isArray(val)) {
+      dict[key] = [].concat(dict[key], val).filter(Boolean)
+    }
+
+    else if (typeof val === 'object') {
+      dict[key] = {...dict[key], ...val}
+    }
+
+    else {
+      dict[key] = val
+    }
+
+    const strung = JSON.stringify(dict)
+    this.store.setItem(this.__internal_key__, strung)
   }
 }
+
+export const storage = new Store()
