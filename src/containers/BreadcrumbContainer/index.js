@@ -81,8 +81,7 @@ class BreadcrumbContainer extends React.PureComponent {
       range,
     } = this.props
 
-    let fkeys
-    let rkeys
+    let fkeys, rkeys
 
     return (
       <div className="BreadcrumbContainer">

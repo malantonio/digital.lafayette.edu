@@ -1,0 +1,55 @@
+[
+  {
+    "name": "subject",
+    "label": "Subject",
+    "items": [
+      {
+        "hits": 100,
+        "label": "Subject A",
+        "value": "Subject A"
+      },
+      {
+        "hits": 90,
+        "label": "Subject B",
+        "value": "Subject B"
+      }
+    ]
+  },
+  {
+    "name": "empty",
+    "label": "Empty",
+    "items": []
+  },
+  {
+    "name": "author",
+    "label": "Author",
+    "items": [
+      {
+        "hits": 80,
+        "label": "Author 1",
+        "value": "Author 1"
+      }
+    ]
+  },
+  {
+    "name": "date_created",
+    "label": "Date Created",
+    "items": [
+      {
+        "hits": 70,
+        "label": "1990",
+        "value": "1990"
+      },
+      {
+        "hits": 60,
+        "label": "1980",
+        "value": "1980"
+      },
+      {
+        "hits": 50,
+        "label": "1970",
+        "value": "1970"
+      }
+    ]
+  }
+]

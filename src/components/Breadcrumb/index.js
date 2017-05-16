@@ -12,7 +12,7 @@ const propTypes = {
     value: PropTypes.oneOfType([
       PropTypes.string, PropTypes.object,
     ])
-  })
+  }).isRequired
 }
 
 class Breadcrumb extends React.PureComponent {
@@ -39,7 +39,7 @@ class Breadcrumb extends React.PureComponent {
         }
 
         <span className="Breadcrumb-item">
-          {item.label || item.value}
+          { item.label }
         </span>
 
         <button
