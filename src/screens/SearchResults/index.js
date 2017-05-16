@@ -13,7 +13,8 @@ import ResultsHeader from '../../containers/ResultsHeader'
 import ResultsContainer from '../../containers/ResultsContainer'
 import ResultsGallery from '../../containers/ResultsGallery'
 
-import * as utils from '../../utils'
+import * as utils from './utils'
+import { createFacetDictionary } from '../../utils'
 
 const debug = Debug('digital:screens/SearchResults')
 
@@ -46,7 +47,7 @@ class SearchResults extends React.PureComponent {
     }
 
     this.state = {
-      resultsContainer: 'list',
+      resultsContainer: utils.getResultsView('list')
     }
   }
 
@@ -86,6 +87,9 @@ class SearchResults extends React.PureComponent {
 
   handleToggleResultsContainer (which) {
     debug(`setting ResultsContainer to ${which}`)
+
+    utils.setResultsView(which)
+
     this.setState({
       resultsContainer: which,
     })
@@ -112,7 +116,7 @@ class SearchResults extends React.PureComponent {
 
     debug('building FacetDictionary')
 
-    this.facetDictionary = utils.createFacetDictionary(facets)
+    this.facetDictionary = createFacetDictionary(facets)
   }
 
   renderFacetSidebar () {

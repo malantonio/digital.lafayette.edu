@@ -23,6 +23,11 @@ export class Store {
 
     this.store = opts.store || window.sessionStorage
     this.__internal_key__ = 'dig@laf'
+
+    // set an empty object if this is our first time w/ the store
+    if (this.store.getItem(this.__internal_key__) === null) {
+      this.store.setItem(this.__internal_key__, '{}')
+    }
   }
 
   clear () {
@@ -43,7 +48,7 @@ export class Store {
     }
 
     catch (e) {
-      return null
+      return {}
     }
   }
 
@@ -72,4 +77,4 @@ export class Store {
   }
 }
 
-export const storage = new Store()
+export const session = new Store()

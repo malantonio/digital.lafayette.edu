@@ -1,0 +1,12 @@
+// session tools
+import { session } from '../../utils'
+
+export const STORE_VIEW_KEY = 'results-view'
+
+export function getResultsView (fallback) {
+  return session.get(STORE_VIEW_KEY) || fallback
+}
+
+export function setResultsView (which) {
+  session.set(STORE_VIEW_KEY, which)
+}
