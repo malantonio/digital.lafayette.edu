@@ -48,7 +48,7 @@ export class Store {
     }
 
     catch (e) {
-      return {}
+      return null
     }
   }
 
@@ -60,17 +60,7 @@ export class Store {
       throw Error('Problem parsing storage')
     }
 
-    if (Array.isArray(val)) {
-      dict[key] = [].concat(dict[key], val).filter(Boolean)
-    }
-
-    else if (typeof val === 'object') {
-      dict[key] = {...dict[key], ...val}
-    }
-
-    else {
-      dict[key] = val
-    }
+    dict[key] = val
 
     const strung = JSON.stringify(dict)
     this.store.setItem(this.__internal_key__, strung)

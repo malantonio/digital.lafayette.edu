@@ -1,0 +1,37 @@
+.ResultsTable {
+  $thumbnail-size: 175px;
+
+  overflow-x: scroll;
+
+  .HamburgerButton {
+    height: 25px;
+    width: 25px;
+  }
+
+  &-table {
+    margin-top: 1em;
+    min-width: 100%;
+
+    td {
+      min-width: $thumbnail-size;
+      padding: 1em;
+    }
+  }
+
+  thead &-thumbnail {
+    // position: relative;
+    text-align: left;
+  }
+
+  tbody &-thumbnail {
+    background-color: #eee;
+    height: $thumbnail-size;
+    padding: 1em;
+    text-align: center;
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+}

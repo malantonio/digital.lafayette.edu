@@ -12,22 +12,12 @@ import LoadingModal from '../../components/LoadingModal'
 import ResultsHeader from '../../containers/ResultsHeader'
 import ResultsContainer from '../../containers/ResultsContainer'
 import ResultsGallery from '../../containers/ResultsGallery'
+import ResultsTable from '../../containers/ResultsTable'
 
 import * as utils from './utils'
 import { createFacetDictionary } from '../../utils'
 
 const debug = Debug('digital:screens/SearchResults')
-
-const SimpleResultsList = props => (
-  <dl>
-  {props.docs.reduce((o, d) => (
-    o.concat([
-      <dt key={`dt-${d.id}`}>{d.id}</dt>,
-      <dd key={`dd-${d.id}`}>{d.title[0]}</dd>
-    ])
-  ), [])}
-  </dl>
-)
 
 class SearchResults extends React.PureComponent {
   constructor (props) {
@@ -43,11 +33,11 @@ class SearchResults extends React.PureComponent {
 
     this.resultsContainers = {
       'gallery': ResultsGallery,
-      'list': SimpleResultsList,
+      'table': ResultsTable,
     }
 
     this.state = {
-      resultsContainer: utils.getResultsView('list')
+      resultsContainer: utils.getResultsView('list'),
     }
   }
 
@@ -207,11 +197,11 @@ class SearchResults extends React.PureComponent {
       <div style={{display: 'flex'}}>
         <LoadingModal visible={isFetching} />
 
-        <section key="facets" style={{width:'33%'}}>
+        <section key="facets" style={{width:'25%'}}>
           {this.renderFacetSidebar()}
         </section>
 
-        <section key="results" style={{width:'66%'}}>
+        <section key="results" style={{width:'75%'}}>
           {this.renderResultsHeader()}
           {this.renderResults()}
         </section>
