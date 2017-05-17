@@ -4,7 +4,13 @@ import { session } from '../../utils'
 export const STORE_VIEW_KEY = 'results-view'
 
 export function getResultsView (fallback) {
-  return session.get(STORE_VIEW_KEY) || fallback
+  const view = session.get(STORE_VIEW_KEY)
+
+  if (view === null) {
+    session.set(STORE_VIEW_KEY, fallback)
+  }
+
+  return view || fallback
 }
 
 export function setResultsView (which) {

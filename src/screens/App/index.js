@@ -20,7 +20,7 @@ class App extends React.PureComponent {
         <main>
           <SiteHeader />
 
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={() => <Home {...this.props} /> } />
           <Route path="/search" render={props => {
             const merged = {
               ...props,

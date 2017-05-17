@@ -1,3 +1,7 @@
+import Debug from 'debug'
+
+const noop = () => {}
+
 export function createFacetDictionary (facets) {
   return facets.reduce((out, facet) => {
     const { name, label } = facet
@@ -17,30 +21,40 @@ export function getApiPath (path) {
 
 export class Store {
   constructor (opts) {
+    if (typeof opts === 'string') {
+      key = opts
+      opts = {key}
+    }
+
     if (!opts) {
       opts = {}
     }
 
     this.store = opts.store || window.sessionStorage
-    this.__internal_key__ = 'dig@laf'
+    this.key = opts.key || 'store'
+    this.log = opts.log || noop
 
     // set an empty object if this is our first time w/ the store
-    if (this.store.getItem(this.__internal_key__) === null) {
-      this.store.setItem(this.__internal_key__, '{}')
+    if (this.store.getItem(this.key) === null) {
+      this.store.setItem(this.key, '{}')
     }
   }
 
   clear () {
-    this.store.removeItem(this.__internal_key__)
+    this.log('clearing storage')
+    this.store.removeItem(this.key)
     return null
   }
 
   get (key) {
+    this.log('getting "%s"', key)
+
     try {
-      const res = this.store.getItem(this.__internal_key__)
+      const res = this.store.getItem(this.key)
       const parsed = JSON.parse(res)
 
       if (key === undefined) {
+        this.log('no key present, returning store')
         return parsed
       }
 
@@ -48,23 +62,27 @@ export class Store {
     }
 
     catch (e) {
+      this.log('JSON parse error %s', e.message)
       return null
     }
   }
 
   set (key, val) {
-    const dict = this.get()
+    try {
+      this.log('setting "%s" to %s', key, JSON.stringify(val))
+      const res = this.store.getItem(this.key)
+      const parsed = JSON.parse(res)
 
-    // probably not the best strategy?
-    if (dict === null) {
-      throw Error('Problem parsing storage')
+      parsed[key] = val
+
+      const strung = JSON.stringify(parsed)
+      this.store.setItem(this.key, strung)
     }
 
-    dict[key] = val
-
-    const strung = JSON.stringify(dict)
-    this.store.setItem(this.__internal_key__, strung)
+    catch (e) {
+      this.log('JSON.parse error: %s', e.message)
+    }
   }
 }
 
-export const session = new Store()
+export const session = new Store({key: 'dig@laf', log: Debug('digital:session')})

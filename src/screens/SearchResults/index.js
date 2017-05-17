@@ -32,13 +32,15 @@ class SearchResults extends React.PureComponent {
     this.renderResults = this.renderResults.bind(this)
 
     this.resultsContainers = {
-      'gallery': ResultsGallery,
       'table': ResultsTable,
+      'gallery': ResultsGallery,
     }
 
     this.state = {
-      resultsContainer: utils.getResultsView('list'),
+      resultsContainer: utils.getResultsView('table'),
     }
+
+    console.log('constructing', this.state)
   }
 
   componentDidMount () {
