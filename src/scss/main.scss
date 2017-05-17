@@ -30,7 +30,8 @@ $selected-color: #65ab65;
 
 // customizing react-blacklight-facet to have a divider after
 // the selected-facets list
-.FacetList-list.selected::after {
+// (begging forgiveness from the css gods for such a long selector)
+.FacetList-list.selected:not(:empty)::after {
   border-bottom: 1px solid rgba($selected-color, 0.25);
   content: "";
   display: block;
