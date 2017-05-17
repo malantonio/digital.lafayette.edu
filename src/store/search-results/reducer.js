@@ -20,6 +20,9 @@ export default handleActions({
       ...state,
       docs,
       facets,
+      meta: {
+        total: pages.total_count,
+      }
     }
   }
 }, initialState)

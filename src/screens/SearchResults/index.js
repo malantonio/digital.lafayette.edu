@@ -144,7 +144,7 @@ class SearchResults extends React.PureComponent {
   }
 
   renderResultsHeader () {
-    const { search } = this.props
+    const { search, searchResults } = this.props
 
     if (search.facets === undefined || search.meta.needsHydration === true) {
       return null
@@ -159,6 +159,7 @@ class SearchResults extends React.PureComponent {
     return (
       <ResultsHeader
         {...search}
+        count={searchResults.meta.total}
         dictionary={this.facetDictionary}
         onRemoveBreadcrumb={this.handleRemoveBreadcrumb}
         viewToggleOptions={toggleOptions}

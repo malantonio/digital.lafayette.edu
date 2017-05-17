@@ -2,9 +2,22 @@
   &-divider {
     border-color: transparent;
     border-bottom: 1px solid #ebebeb;
+    display: block;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 66%;
+  }
+
+  &-row-upper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .ResultCount {
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 }

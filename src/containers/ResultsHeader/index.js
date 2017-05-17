@@ -1,16 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import BreadcrumbContainer from '../BreadcrumbContainer'
 import Toggle from '../../components/Toggle'
+import ResultCount from '../../components/ResultCount'
+import BreadcrumbContainer from '../BreadcrumbContainer'
 
 const propTypes = {
   ...BreadcrumbContainer.propTypes,
+  count: PropTypes.number,
+}
+
+const countFormatter = (str, num) => {
+  const res = `result${num === 1 ? '' : 's'}`
+  return `Found ${str} ${res}`
 }
 
 const ResultsHeader = props => {
   return (
     <div className="ResultsHeader">
-      <Toggle {...props.viewToggleOptions} />
+      <div className="ResultsHeader-row-upper">
+        <Toggle
+          {...props.viewToggleOptions}
+        />
+        <ResultCount
+          count={props.count}
+          message={countFormatter}
+        />
+      </div>
 
       <BreadcrumbContainer
         {...props}
