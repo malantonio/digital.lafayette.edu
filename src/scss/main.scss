@@ -12,9 +12,26 @@
 @import "../components/ResultsGalleryItem/style";
 
 @import "../components/Breadcrumb/style";
+@import "../containers/BreadcrumbContainer/style";
 
 // options for 'x'-es that aren't the letter 'x'
 // https://en.wikipedia.org/wiki/X_mark
 $selected-list-remove-text-content: "\00D7";
 
-@import "@lafayette-college-libraries/react-blacklight-facet/lib/main"
+// need to re-define `$selected-color` so we can use it out-of-scope
+// for the divider (.FacetList-list.selected::after)
+$selected-color: #65ab65;
+
+@import "@lafayette-college-libraries/react-blacklight-facet/lib/main";
+
+// customizing react-blacklight-facet to have a divider after
+// the selected-facets list
+.FacetList-list.selected::after {
+  border-bottom: 1px solid rgba($selected-color, 0.25);
+  content: "";
+  display: block;
+  margin: auto;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 90%;
+}
