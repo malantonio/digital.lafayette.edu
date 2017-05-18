@@ -5,6 +5,7 @@ import rootReducer from './reducers'
 
 import { initialState as search } from './search/reducer'
 import { initialState as searchResults } from './search-results/reducer'
+import { initialState as work } from './work/reducer'
 import history from '../history'
 
 const rmiddleware = routerMiddleware(history)
@@ -12,6 +13,7 @@ const rmiddleware = routerMiddleware(history)
 const initialState = {
   search,
   searchResults,
+  work,
 }
 
 const store = createStore(

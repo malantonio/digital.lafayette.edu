@@ -17,6 +17,7 @@ if (!process.env.API_BASE_URL) {
 const mapStateToProps = state => ({
   search: state.search,
   searchResults: state.searchResults,
+  work: state.work,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch)

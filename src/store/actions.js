@@ -7,3 +7,7 @@ export {
   searchWithQueryString,
   toggleFacetItem,
 } from './search/actions'
+
+export {
+  getWork
+} from './work/actions'

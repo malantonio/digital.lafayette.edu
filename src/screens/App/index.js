@@ -10,6 +10,7 @@ import SiteHeader from '../../components/SiteHeader'
 import Home from '../Home'
 import SearchBase from '../SearchBase'
 import SearchResults from '../SearchResults'
+import Work from '../Work'
 
 import history from '../../history'
 
@@ -33,6 +34,10 @@ class App extends React.PureComponent {
 
             return <Component {...merged} />
           }} />
+
+          <Route path="/works/:id" render={props => (
+            <Work {...props} {...this.props} />
+          )} />
         </main>
       </ConnectedRouter>
 
