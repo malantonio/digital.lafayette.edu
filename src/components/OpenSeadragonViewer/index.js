@@ -27,12 +27,10 @@ class OpenSeadragonViewer extends React.PureComponent {
     }
   }
 
-  componentWillMount () {
-    window.addEventListener('resize', this.resizeContainer)
-  }
-
   componentDidMount () {
     this.initOpenSeadragon()
+
+    window.addEventListener('resize', this.resizeContainer)
   }
 
   componentWillUnmount () {
@@ -64,8 +62,6 @@ class OpenSeadragonViewer extends React.PureComponent {
 
       ...viewerProps,
     })
-
-    this.viewer.addHandler('resize', this.resizeContainer)
   }
 
   resizeContainer () {
