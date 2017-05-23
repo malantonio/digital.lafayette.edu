@@ -39,8 +39,6 @@ class SearchResults extends React.PureComponent {
     this.state = {
       resultsContainer: utils.getResultsView('table'),
     }
-
-    console.log('constructing', this.state)
   }
 
   componentDidMount () {
