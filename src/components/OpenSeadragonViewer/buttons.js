@@ -2,13 +2,6 @@ import React from 'react'
 
 const VIEWBOX = '0 0 100 100'
 
-const IDS = {
-  PLUS: 'osd-plus-button',
-  MINUS: 'osd-minus-button',
-  FULLSCREEN: 'osd-fullscreen-button',
-  RESET: 'osd-reset-button',
-}
-
 const arrow = {
   head: {
     stroke: 'none',
@@ -19,13 +12,13 @@ const arrow = {
   }
 }
 
-function buttonFactory(name, id, contents) {
+function buttonFactory(name, contents) {
   const fn = props => {
     const size = props.size
     const p = {
       button: {
         className: `${name} osd-button`,
-        id,
+        id: `osd-${name.toLowerCase()}-button`,
         style: {
           height: size,
           position: 'relative',
@@ -64,20 +57,20 @@ function buttonFactory(name, id, contents) {
   return fn
 }
 
-export const Plus = buttonFactory('Plus', IDS.PLUS, (
+export const Plus = buttonFactory('Plus', (
   <g>
     <path d="M50,10l0,80" {...arrow.stem} />
     <path d="M10,50l80,0" {...arrow.stem} />
   </g>
 ))
 
-export const Minus = buttonFactory('Minus', IDS.MINUS, (
+export const Minus = buttonFactory('Minus', (
   <g>
     <path d="M10,50l80,0" {...arrow.stem} />
   </g>
 ))
 
-export const FullScreen = buttonFactory('FullScreen', IDS.FULLSCREEN, (
+export const FullScreen = buttonFactory('FullScreen', (
   <g>
     <g key="top-left">
       <path d="M10,10L40,10L10,40" {...arrow.head} />
@@ -101,7 +94,7 @@ export const FullScreen = buttonFactory('FullScreen', IDS.FULLSCREEN, (
   </g>
 ))
 
-export const Reset = buttonFactory('Reset', IDS.RESET, (
+export const Reset = buttonFactory('Reset', (
   <g>
     {/* <rect x="20" y="10" width="60" height="80" fill="none" /> */}
     <path d="M50,10l15,25l-30,0" {...arrow.head} />
