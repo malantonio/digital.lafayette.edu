@@ -1,14 +1,28 @@
 .MetadataTable {
+  $border-color: #ccc;
+  $border: 1px solid $border-color;
+
   border-collapse: collapse;
   margin: auto;
   width: 850px;
 
+  tbody {
+    border: $border;
+  }
+
   td {
-    border: 1px solid #ccc;
-    padding: 3px 5px;
+    padding: 5px;
   }
 
   &-key {
+    border: $border;
+    border-right: none;
+    border-bottom: none;
     font-weight: bold;
+    width: 25%;
+
+    + td {
+      border-top: $border;
+    }
   }
 }
