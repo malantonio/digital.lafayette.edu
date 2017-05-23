@@ -13,12 +13,13 @@ const arrow = {
 }
 
 function buttonFactory(name, contents) {
+  const id = `osd-${name.toLowerCase()}-button`
   const fn = props => {
     const size = props.size
     const p = {
       button: {
         className: `${name} osd-button`,
-        id: `osd-${name.toLowerCase()}-button`,
+        id,
         style: {
           height: size,
           position: 'relative',
