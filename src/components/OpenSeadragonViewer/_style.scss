@@ -3,16 +3,27 @@
   height: 100%;
   width: 100%;
 
-  .osd-button {
-    box-sizing: content-box;
-    cursor: pointer;
-    margin: 5px;
-    padding: 0;
-    stroke: $black;
-    fill: $black;
 
-    &:active {
+  &-toolbar {
+    box-sizing: content-box;
+    fill: $black;
+    stroke: $black;
+
+    .osd-button {
+      cursor: pointer;
+      margin: 5px;
+      padding: 0;
+
+      &:active {
+        background-color: #aaa;
+      }
+    }
+
+    &.fullpage {
       background-color: #ccc;
+      .osd-button {
+        padding: 0;
+      }
     }
   }
 

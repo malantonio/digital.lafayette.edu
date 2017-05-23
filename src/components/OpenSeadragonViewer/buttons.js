@@ -44,6 +44,7 @@ function buttonFactory(name, id, contents) {
         }
       }
     }
+
     return (
       <button {...p.button}>
         <svg {...p.svg}>
@@ -102,7 +103,7 @@ export const FullScreen = buttonFactory('FullScreen', IDS.FULLSCREEN, (
 
 export const Reset = buttonFactory('Reset', IDS.RESET, (
   <g>
-    <rect x="20" y="10" width="60" height="80" fill="none" />
+    {/* <rect x="20" y="10" width="60" height="80" fill="none" /> */}
     <path d="M50,10l15,25l-30,0" {...arrow.head} />
     <path d="M50,35l0,30" {...arrow.stem} />
     <path d="M50,90l-15,-25l30,0" {...arrow.head} />

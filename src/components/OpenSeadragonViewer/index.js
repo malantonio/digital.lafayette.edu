@@ -48,13 +48,14 @@ class OpenSeadragonViewer extends React.PureComponent {
 
     this.viewer = OpenSeadragon({
       element: this.osdElement,
-      prefixUrl: 'http://openseadragon.github.io/openseadragon/images/',
       autoHideControls: false,
       tileSources: sources,
       sequenceMode: sources.length > 1,
       showReferenceStrip: sources.length > 1,
       referenceStripScroll: 'vertical',
       showNavigator: true,
+
+      toolbar: 'toolbar',
 
       zoomInButton: Buttons.Plus.id,
       zoomOutButton: Buttons.Minus.id,
@@ -63,9 +64,19 @@ class OpenSeadragonViewer extends React.PureComponent {
 
       ...viewerProps,
     })
+
+    this.viewer.addHandler('resize', this.resizeContainer)
   }
 
   resizeContainer () {
+    if (this.viewer.isFullPage()) {
+      this.setState({
+        height: '100%',
+      })
+
+      return
+    }
+
     // throttle
     let timeout
 
@@ -80,13 +91,15 @@ class OpenSeadragonViewer extends React.PureComponent {
   }
 
   render () {
+    const buttonSize = 25
+
     return (
       <div className="OpenSeadragonViewer">
-        <div className="OpenSeadragonViewer-buttons">
-          <Buttons.Plus size={20} />
-          <Buttons.Minus size={20} />
-          <Buttons.Reset size={20} />
-          <Buttons.FullScreen size={20} />
+        <div id="toolbar" className="OpenSeadragonViewer-toolbar">
+          <Buttons.Plus size={buttonSize} />
+          <Buttons.Minus size={buttonSize} />
+          <Buttons.Reset size={buttonSize} />
+          <Buttons.FullScreen size={buttonSize} />
         </div>
 
         <div
