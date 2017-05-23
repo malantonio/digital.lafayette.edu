@@ -20,6 +20,9 @@
 @import "../components/Breadcrumb/style";
 @import "../containers/BreadcrumbContainer/style";
 
+@import "../components/WorkHeader/style";
+@import "../containers/MetadataTable/style";
+
 // options for 'x'-es that aren't the letter 'x'
 // https://en.wikipedia.org/wiki/X_mark
 $selected-list-remove-text-content: "\00D7";

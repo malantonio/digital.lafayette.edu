@@ -1,6 +1,6 @@
 import React from 'react'
 import WorkHeader from '../../components/WorkHeader'
-import MetadataContainer from '../../containers/MetadataContainer'
+import MetadataTable from '../../containers/MetadataTable'
 
 import { schema } from './utils'
 
@@ -13,12 +13,26 @@ class Work extends React.PureComponent {
     }
   }
 
+  renderMetadata (data) {
+    if (data === undefined) {
+      return null
+    }
+
+    return (
+      <MetadataTable
+        data={data}
+        schema={schema}
+      />
+    )
+  }
+
   render () {
     const { match, work } = this.props
     const { isFetching } = work.meta
+    const { data } = work
 
-    const id = work.data !== undefined
-      ? work.data.id
+    const id = data !== undefined
+      ? data.id
       : this.props.match.params.id
 
     return (
@@ -26,12 +40,10 @@ class Work extends React.PureComponent {
         <WorkHeader
           id={id}
           isFetching={isFetching}
-          title={work.data ? work.data.title : null}
+          title={data ? data.title : null}
         />
 
-        {
-          work.data ? <MetadataContainer data={work.data} schema={schema} /> : ''
-        }
+        { this.renderMetadata(data) }
       </div>
     )
   }

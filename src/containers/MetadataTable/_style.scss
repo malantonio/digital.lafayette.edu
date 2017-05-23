@@ -1,0 +1,14 @@
+.MetadataTable {
+  border-collapse: collapse;
+  margin: auto;
+  width: 850px;
+
+  td {
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+  }
+
+  &-key {
+    font-weight: bold;
+  }
+}
