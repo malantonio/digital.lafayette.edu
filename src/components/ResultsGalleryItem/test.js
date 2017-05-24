@@ -9,7 +9,7 @@ const defaultProps = {
 const wrapEl = xtend => shallow(<GalleryItem {...defaultProps} {...xtend} />)
 
 const SELECTORS = {
-  title: '.ResultGalleryItem-title'
+  title: '.ResultsGalleryItem-title'
 }
 
 describe('<ResultsGalleryItem />', () => {
