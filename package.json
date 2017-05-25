@@ -16,6 +16,7 @@
   "dependencies": {
     "@lafayette-college-libraries/react-blacklight-facet": "^2.0.2",
     "debug": "^2.6.6",
+    "es6-promise": "^4.1.0",
     "history": "^4.6.1",
     "lodash.isequal": "^4.5.0",
     "openseadragon": "^2.2.1",
@@ -32,7 +33,7 @@
     "redux": "^3.6.0",
     "redux-actions": "^2.0.2",
     "redux-thunk": "^2.2.0",
-    "xhr": "^2.4.0"
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-loader": "^7.0.0",
@@ -57,7 +58,6 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.3",
     "mocha": "^3.4.2",
-    "mock-xmlhttprequest": "^1.1.0",
     "node-sass": "^4.5.2",
     "phantomjs": "^2.1.7",
     "react-addons-test-utils": "^15.5.1",
