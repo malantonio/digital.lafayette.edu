@@ -16,11 +16,13 @@ export const receivedSearchError = createAction('[error] search')
 export const receivedSearchResults = createAction('received search results')
 export const setSearch = createAction('set search')
 
-const search = (dispatch, props) => (
-  _search(props)
+export const searchCatalog = (dispatch, props) => {
+  dispatch(setSearch(props))
+
+  return _search(props)
     .then(results => dispatch(receivedSearchResults(results)))
     .catch(error => dispatch(receivedSearchError(error)))
-)
+}
 
 export const searchAtPage = page => (dispatch, getState) => {
   const { meta, ...state } = getState().search
@@ -34,9 +36,7 @@ export const searchAtPage = page => (dispatch, getState) => {
 
   debug('fetching page %d', page, updated)
 
-  dispatch(setSearch(updated))
-
-  return search(dispatch, updated)
+  return searchCatalog(dispatch, props)
 }
 
 // this makes the assumption that a query search does not
@@ -44,9 +44,7 @@ export const searchAtPage = page => (dispatch, getState) => {
 export const searchWithQuery = query => dispatch => {
   debug('searching with query: %s', query)
 
-  dispatch(setSearch({query}))
-
-  return search(dispatch, {query})
+  return searchCatalog(dispatch, {query})
 }
 
 export const searchWithQueryString = qs => dispatch => {
@@ -62,9 +60,7 @@ export const searchWithQueryString = qs => dispatch => {
     range,
   }
 
-  dispatch(setSearch(searchObj))
-
-  return search(dispatch, searchObj)
+  return searchCatalog(dispatch, searchObj)
 }
 
 export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => {
@@ -114,6 +110,7 @@ export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => 
           // returned from the api
           if (hasProperty(current, 'value') && hasProperty(item, 'value')) {
             if (isEqual(current.value, item.value)) {
+              console.log('values are equal')
               shouldUpdate = false
               break
             }
@@ -158,10 +155,10 @@ export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => 
     }
 
     searchObj.facets = {
-      ...search.facets,
+      ...searchObj.facets,
       [name]: target,
     }
-  } // end `if (item.type === 'target') / else` block
+  } // end `if (item.type === 'range') / else` block
 
   // reset the page count
   searchObj.meta = {
@@ -169,7 +166,5 @@ export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => 
     page: 1,
   }
 
-  dispatch(setSearch(searchObj))
-
-  return search(dispatch, searchObj)
+  return searchCatalog(dispatch, searchObj)
 }

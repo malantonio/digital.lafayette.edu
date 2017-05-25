@@ -12,7 +12,7 @@ const flattenValues = obj => {
     }
 
     else {
-      out[key] = obj[key].value
+      out[key] = obj[key].value || obj[key]
     }
 
     return out
