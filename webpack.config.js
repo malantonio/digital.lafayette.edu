@@ -40,7 +40,13 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.API_BASE_URL': JSON.stringify(process.env.API_BASE_URL),
+      'process.env.API_BASE_URL': (
+        JSON.stringify(process.env.API_BASE_URL)
+      ),
+
+      'process.env.NODE_ENV': (
+        JSON.stringify(process.env.NODE_ENV || 'development')
+      ),
     }),
     new ExtractTextPlugin('styles.css'),
   ],
