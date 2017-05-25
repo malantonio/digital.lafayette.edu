@@ -1,4 +1,5 @@
 import React from 'react'
+import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import FacetGroup from './'
 import facets from './data/facets.json'
@@ -30,14 +31,14 @@ const NON_EMPTY_COUNT = facets.reduce((i, f) => {
 describe('<FacetGroup />', () => {
   it('will not render if facets is empty', () => {
     const $el = wrapEl({facets: []}).render()
-    expect($el.html()).toBeNull()
+    expect($el.html()).to.be.null
   })
 
   it('will not render a facet if `facet.items` is undefined', () => {
     const empty = { name: 'no-items', label: 'no items' }
     const $el = wrapEl({facets: [].concat(facets, empty)})
 
-    expect($el.find(FACET_COMPONENT)).toHaveLength(NON_EMPTY_COUNT)
+    expect($el.find(FACET_COMPONENT)).to.have.lengthOf(NON_EMPTY_COUNT)
 
   })
 
@@ -47,7 +48,7 @@ describe('<FacetGroup />', () => {
       const $el = wrapEl({blacklist})
 
       expect($el.find(FACET_COMPONENT))
-        .toHaveLength(NON_EMPTY_COUNT - blacklist.length)
+        .to.have.lengthOf(NON_EMPTY_COUNT - blacklist.length)
     })
   })
 
@@ -62,8 +63,8 @@ describe('<FacetGroup />', () => {
       }
 
       const $el = wrapEl({components})
-      expect($el.find(AnotherMockComponent)).toHaveLength(1)
-      expect($el.find(FACET_COMPONENT)).toHaveLength(NON_EMPTY_COUNT - 1)
+      expect($el.find(AnotherMockComponent)).to.have.lengthOf(1)
+      expect($el.find(FACET_COMPONENT)).to.have.lengthOf(NON_EMPTY_COUNT - 1)
     })
   })
 
@@ -93,8 +94,8 @@ describe('<FacetGroup />', () => {
 
       const $el = wrapEl({facets, selected})
       const $facet = $el.find(FACET_COMPONENT).first()
-      expect($facet.prop('selectedItems')).toHaveLength(selectedLength)
-      expect($facet.prop('items')).toHaveLength(remainingFacets)
+      expect($facet.prop('selectedItems')).to.have.lengthOf(selectedLength)
+      expect($facet.prop('items')).to.have.lengthOf(remainingFacets)
     })
   })
 
@@ -103,12 +104,12 @@ describe('<FacetGroup />', () => {
       const $el = wrapEl()
       const total = NON_EMPTY_COUNT
 
-      expect($el.find(FACET_COMPONENT)).toHaveLength(total)
+      expect($el.find(FACET_COMPONENT)).to.have.lengthOf(total)
     })
 
     it('renders empty components when `showEmpty` is true', () => {
       const $el = wrapEl({showEmpty: true})
-      expect($el.find(FACET_COMPONENT)).toHaveLength(facets.length)
+      expect($el.find(FACET_COMPONENT)).to.have.lengthOf(facets.length)
     })
   })
 
@@ -118,7 +119,7 @@ describe('<FacetGroup />', () => {
       const whitelist = [facets[i].name]
       const $el = wrapEl({whitelist})
 
-      expect($el.find(FACET_COMPONENT)).toHaveLength(whitelist.length)
+      expect($el.find(FACET_COMPONENT)).to.have.lengthOf(whitelist.length)
     })
   })
 
