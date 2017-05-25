@@ -3,12 +3,18 @@ import history from '../../history'
 
 const SEARCH_PATH = '/catalog.json'
 const PER_PAGE_LIMIT = 50
-const __NOT_TESTING__ = process.env.NODE_ENV !== 'test'
 
-const flattenValues = obj => {
+const flattenValues = (obj, range) => {
   return Object.keys(obj).reduce((out, key) => {
     if (Array.isArray(obj[key])) {
-      out[key] = obj[key].map(v => typeof v === 'object' ? v.value : v)
+
+      if (range) {
+        out[key] = obj[key][0].value
+      }
+
+      else {
+        out[key] = obj[key].map(v => typeof v === 'object' ? v.value : v)
+      }
     }
 
     else {
@@ -35,11 +41,11 @@ export function search ({query, facets, range, meta}) {
   }
 
   if (facets) {
-    obj.f = flattenValues(facets)
+    obj.f = flattenValues(facets, false)
   }
 
   if (range) {
-    obj.range = flattenValues(range)
+    obj.range = flattenValues(range, true)
   }
 
   const baseQs = stringifyQs(obj)

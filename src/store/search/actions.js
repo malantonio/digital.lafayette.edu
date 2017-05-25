@@ -110,7 +110,6 @@ export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => 
           // returned from the api
           if (hasProperty(current, 'value') && hasProperty(item, 'value')) {
             if (isEqual(current.value, item.value)) {
-              console.log('values are equal')
               shouldUpdate = false
               break
             }
@@ -151,12 +150,16 @@ export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => 
     }
 
     if (dirty === false) {
-      return
+      return Promise.resolve()
     }
 
     searchObj.facets = {
       ...searchObj.facets,
       [name]: target,
+    }
+
+    if (target.length === 0) {
+      delete searchObj.facets[name]
     }
   } // end `if (item.type === 'range') / else` block
 
