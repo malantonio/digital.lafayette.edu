@@ -1,29 +1,9 @@
 import { get, stringifyQs } from '../api'
 import history from '../../history'
+import { flattenValues } from './utils'
 
-const SEARCH_PATH = '/catalog.json'
-const PER_PAGE_LIMIT = 50
-
-const flattenValues = (obj, range) => {
-  return Object.keys(obj).reduce((out, key) => {
-    if (Array.isArray(obj[key])) {
-
-      if (range) {
-        out[key] = obj[key][0].value
-      }
-
-      else {
-        out[key] = obj[key].map(v => typeof v === 'object' ? v.value : v)
-      }
-    }
-
-    else {
-      out[key] = obj[key].value || obj[key]
-    }
-
-    return out
-  }, {})
-}
+export const SEARCH_PATH = '/catalog.json'
+export const PER_PAGE_LIMIT = 50
 
 export function search ({query, facets, range, meta}) {
   if (!meta) {
