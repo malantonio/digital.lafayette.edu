@@ -34,9 +34,8 @@ export const searchAtPage = page => (dispatch, getState) => {
     }
   }
 
-  debug('fetching page %d', page, updated)
-
-  return searchCatalog(dispatch, props)
+  debug('fetching page %d', page)
+  return searchCatalog(dispatch, updated)
 }
 
 // this makes the assumption that a query search does not

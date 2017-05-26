@@ -4,9 +4,10 @@ import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 
 import * as actions from './actions'
+import { initialState } from './reducer'
 
 const mockStore = configureStore([thunk])
-const store = mockStore({})
+const store = mockStore({search: initialState})
 
 const cleanup = () => {
   fetchMock.reset()
@@ -19,6 +20,17 @@ describe('store/search/actions', function () {
   })
 
   afterEach(cleanup)
+
+  describe('#searchAtPage', function () {
+    it('adds the page number to the queryString', function () {
+      const page = 3
+      return store.dispatch(actions.searchAtPage(page))
+        .then(() => {
+          const url = fetchMock.lastUrl()
+          expect(url).to.contain(`page=${page}`)
+        })
+    })
+  })
 
   describe('#searchWithQuery', function () {
     it('passes `q={query}` to queryString', function () {
