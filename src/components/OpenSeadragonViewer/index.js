@@ -1,3 +1,5 @@
+/* global OpenSeadragon */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -109,5 +111,6 @@ class OpenSeadragonViewer extends React.PureComponent {
 }
 
 OpenSeadragonViewer.propTypes = propTypes
+OpenSeadragonViewer.defaultProps = defaultProps
 
 export default OpenSeadragonViewer

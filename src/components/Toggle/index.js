@@ -24,7 +24,7 @@ class Toggle extends React.PureComponent {
     this.props.onChange(val)
   }
 
-  renderToggleOption (value, index) {
+  renderToggleOption (value) {
     const selected = value === this.props.value
     const className = `Toggle-option${selected ? ' is-selected' : ''}`
 

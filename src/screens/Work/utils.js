@@ -7,11 +7,14 @@ const createFacetQueryValue = (key, value) => {
 
 const reflective = value => value
 
+/* eslint-disable react/display-name */
 const linkFacetField = field => value => (
   <Link to={`/search?${createFacetQueryValue(field, value)}`}>
     {value}
   </Link>
 )
+/* eslint-enable react/display-name */
+
 const dateString = value => {
   let [date, time] = value.split('T')
   time = time.replace(/\+00:00$/, '')

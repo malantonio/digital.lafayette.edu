@@ -133,10 +133,10 @@ class SearchResults extends React.PureComponent {
         defaultComponent={FacetList}
         facets={facets}
         onRemoveSelectedItem={(facet, item) => {
-          this.props.toggleFacetItem(facet, item, false)
+          toggleFacetItem(facet, item, false)
         }}
         onSelectItem={(facet, item) => {
-          this.props.toggleFacetItem(facet, item, true)
+          toggleFacetItem(facet, item, true)
         }}
         selected={selected}
       />
@@ -187,7 +187,7 @@ class SearchResults extends React.PureComponent {
   render () {
     const { searchResults, search } = this.props
     const { isFetching } = search.meta
-    const { docs, facets } = searchResults
+    const { docs } = searchResults
 
     // TODO: 'redirect' to no-docs-found screen
     if (docs !== undefined && docs.length === 0) {

@@ -6,8 +6,6 @@ export const fetchingWork = createAction('fetching work')
 export const receivedWork = createAction('received work')
 export const receivedWorkError = createAction('[error] receiving work')
 
-const hasOwnProperty = Object.prototype.hasOwnProperty
-
 export const getWork = params => dispatch => {
   dispatch(fetchingWork(params))
 

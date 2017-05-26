@@ -23,7 +23,7 @@ const Field = props => {
 
   let cn = `${CLASSNAME}-field`
 
-  if (props.selected === true) {
+  if (selected === true) {
     cn += ' selected'
   }
 
@@ -39,7 +39,7 @@ const Field = props => {
 }
 
 
-const Divider = props => (
+const Divider = () => (
   <div className={`${CLASSNAME}-divider`} />
 )
 

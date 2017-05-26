@@ -7,10 +7,10 @@ import { schema } from './utils'
 
 class Work extends React.PureComponent {
   componentDidMount () {
-    const { fetchWork, match, work } = this.props
+    const { getWork, match, work } = this.props
 
     if (work.data === undefined || work.meta.isFetching === false) {
-      return this.props.getWork(match.params)
+      return getWork(match.params)
     }
   }
 
@@ -57,7 +57,7 @@ class Work extends React.PureComponent {
 
     const id = data !== undefined
       ? data.id
-      : this.props.match.params.id
+      : match.params.id
 
     return (
       <div className="Work">

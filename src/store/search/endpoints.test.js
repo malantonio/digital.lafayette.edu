@@ -1,6 +1,5 @@
 import { expect } from 'chai'
 import fetchMock from 'fetch-mock'
-import * as utils from './utils'
 import * as endpoints from './endpoints'
 
 describe('store/search/endpoints', function () {
