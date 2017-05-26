@@ -35,6 +35,10 @@ export default handleActions({
 
     let { facets, range, meta } = {...state}
 
+    if (!meta) {
+      meta = {}
+    }
+
     const fkeys = Object.keys(facets)
     const rkeys = Object.keys(range)
 
@@ -109,7 +113,7 @@ export default handleActions({
         offset: 0,
         page: opts.page || 1,
       },
-      query: query || '',
+      query: query || null,
       range: range || {},
     }
   },
