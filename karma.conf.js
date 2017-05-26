@@ -2,47 +2,20 @@ const webpack = require('webpack')
 
 module.exports = function(config) {
   config.set({
-
-  // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
-
-
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['mocha'],
-
-
-    // list of files / patterns to load in the browser
-    files: [
-      'webpack.test.js'
-    ],
-
-
-    // list of files to exclude
-    exclude: [
-
-    ],
-
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    files: ['webpack.test.js'],
     preprocessors: {
       'webpack.test.js': [ 'webpack', 'sourcemap' ],
     },
 
     webpack: {
+      devtool: 'inline-source-map',
       module: {
-        loaders: [
+        rules: [
           {
             test: /\.js?$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-            query: {
-              presets: ['es2015', 'react']
-            },
-          },
-          {
-            test: /\.json$/,
-            loader: 'json-loader',
+            use: 'babel-loader',
           },
         ],
       },
@@ -59,47 +32,27 @@ module.exports = function(config) {
           'process.env.NODE_ENV': JSON.stringify('test'),
         })
       ],
-
-      devtool: '#inline-source-map',
-
-      node: {
-        fs: 'empty',
-      }
     },
+
     webpackServer: {
       noInfo: true,
     },
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha', 'coverage', 'coveralls'],
-
-    // web server port
-    port: 9876,
-
-
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
-
-
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
-
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: [
-      'PhantomJS',
+    reporters: [
+      'mocha',
+      'coverage',
+      'coveralls',
     ],
 
-    // Concurrency level
-    // how many browser should be started simultaneous
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    browsers: ['PhantomJS'],
     concurrency: Infinity,
-
     coverageReporter: {
       type: 'lcov',
       dir: 'coverage/',
-    }
+      includeAllSources: true,
+    },
   })
 }

@@ -6,14 +6,23 @@
   ],
   "plugins": [
     "transform-object-rest-spread",
-    "add-module-exports"
+    "add-module-exports",
   ],
   "ignore": [
-    "node_modules/**/*"
+    "**/node_modules/**/*"
   ],
   "env": {
     "test": {
-      "plugins": ["istanbul"]
+      "plugins": [
+        [
+          "istanbul", {
+            "exclude": [
+              "**/test.js",
+              "**/*.test.js"
+            ]
+          }
+        ]
+      ]
     }
   }
 }
