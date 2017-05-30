@@ -8,6 +8,7 @@ export const initialState = {
 }
 
 export default handleActions({
+  [work.clearWork]: () => ({ ...initialState }),
   [work.fetchingWork]: () => ({
     meta: {
       isFetching: true,
