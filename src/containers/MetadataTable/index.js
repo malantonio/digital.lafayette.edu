@@ -86,7 +86,7 @@ class MetadataTable extends React.PureComponent {
   }
 
   renderMetadataFields () {
-    const { blacklist, whitelist, schema, data } = this.props
+    const { schema, data } = this.props
 
     if (schema !== null) {
       return this.renderFieldsBySchema(schema, data)

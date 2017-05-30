@@ -1,14 +1,12 @@
 import { get } from '../api'
 
-const SEARCH_PATH = '/concern/generic_works'
-const EXTENSION = '.json'
-
-const getPath = id => (
+export const SEARCH_PATH = '/concern/generic_works'
+export const EXTENSION = '.json'
+export const getPath = id => (
   `${SEARCH_PATH}/${id}${EXTENSION}`
 )
 
-export function getWorkById (id, callback) {
+export function getWorkById (id) {
   const path = getPath(id)
-
-  return get(path, callback)
+  return get(path)
 }

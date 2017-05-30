@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const hasOwnProperty = Object.prototype.hasOwnProperty
-
 const propTypes = {
   id: PropTypes.string.isRequired,
   isFetching: PropTypes.bool,

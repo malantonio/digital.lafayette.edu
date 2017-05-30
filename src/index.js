@@ -1,3 +1,8 @@
+// polyfills
+import es6p from 'es6-promise'
+import 'whatwg-fetch'
+
+// app code
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -9,6 +14,9 @@ import store from './store'
 import App from './screens/App'
 
 import './scss/main.scss'
+
+// kick-off polyfill after imports
+es6p.polyfill()
 
 if (!process.env.API_BASE_URL) {
   throw Error('No `API_BASE_URL` variable set')

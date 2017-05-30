@@ -1,4 +1,5 @@
 import React from 'react'
+import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import Breadcrumb from './'
 
@@ -23,35 +24,35 @@ const SELECTORS = {
   hover: '.is-hovered',
 }
 
-describe('components/Breadcrumb', () => {
-  describe(`the ${SELECTORS.facet} label`, () => {
-    test('renders `facet.label` when present', () => {
+describe('components/Breadcrumb', function () {
+  describe(`the ${SELECTORS.facet} label`, function () {
+    it('renders `facet.label` when present', function () {
       const $el = wrapEl()
       const $facet = $el.find(SELECTORS.facet)
-      expect($facet).toHaveLength(1)
-      expect($facet.text()).toContain(defaultProps.facet.label)
-      expect($facet.text()).toContain('>')
+      expect($facet).to.have.lengthOf(1)
+      expect($facet.text()).to.contain(defaultProps.facet.label)
+      expect($facet.text()).to.contain('>')
     })
 
-    test('does not render when `.label` is missing', () => {
+    it('does not render when `.label` is missing', function () {
       const facet = {name: 'cool-facet'}
       const $el = wrapEl({facet})
       const $facet = $el.find(SELECTORS.facet)
 
-      expect($facet).toHaveLength(0)
+      expect($facet).to.have.lengthOf(0)
     })
 
-    test('does not render `facet` is not present', () => {
+    it('does not render `facet` is not present', function () {
       const $el = wrapEl({facet: undefined})
-      expect($el.find(SELECTORS.facet)).toHaveLength(0)
+      expect($el.find(SELECTORS.facet)).to.have.lengthOf(0)
     })
   })
 
-  describe(`the ${SELECTORS.button} button`, () => {
-    test('triggers `onRemove` when clicked', done => {
+  describe(`the ${SELECTORS.button} button`, function () {
+    it('triggers `onRemove` when clicked', function (done) {
       const onRemove = (facet, item) => {
-        expect(facet).toEqual(defaultProps.facet)
-        expect(item).toEqual(defaultProps.item)
+        expect(facet).to.deep.equal(defaultProps.facet)
+        expect(item).to.deep.equal(defaultProps.item)
 
         done()
       }
@@ -61,23 +62,23 @@ describe('components/Breadcrumb', () => {
       $btn.simulate('click')
     })
 
-    test('toggles "hovered" mode for the component using mouseOver/mouseOut', () => {
+    it('toggles "hovered" mode for the component using mouseOver/mouseOut', function () {
       const hovered = 'buttonHover'
       const $el = wrapEl()
 
-      expect($el.find(SELECTORS.hover)).toHaveLength(0)
-      expect($el.state(hovered)).toBeFalsy()
+      expect($el.find(SELECTORS.hover)).to.have.lengthOf(0)
+      expect($el.state(hovered)).to.be.false
 
       const $btn = $el.find(SELECTORS.button)
       $btn.simulate('mouseOver')
 
-      expect($el.find(SELECTORS.hover)).toHaveLength(1)
-      expect($el.state(hovered)).toBeTruthy()
+      expect($el.find(SELECTORS.hover)).to.have.lengthOf(1)
+      expect($el.state(hovered)).to.be.true
 
       $btn.simulate('mouseOut')
 
-      expect($el.find(SELECTORS.hover)).toHaveLength(0)
-      expect($el.state(hovered)).toBeFalsy()
+      expect($el.find(SELECTORS.hover)).to.have.lengthOf(0)
+      expect($el.state(hovered)).to.be.false
     })
   })
 })

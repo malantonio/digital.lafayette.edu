@@ -1,5 +1,3 @@
-// to h*ck with promises
-import xhr from 'xhr'
 import qs from 'qs'
 
 export const parseQs = str => qs.parse(str)
@@ -36,21 +34,24 @@ const request = (method, path, body, opts, callback) => {
     body,
     json: true,
     method,
-    uri: `${baseUrl}${path}`,
   }
 
-  return xhr(requestOpts, (err, response, body) => {
-    if (err) {
-      return callback(err)
-    }
+  return fetch(`${baseUrl}${path}`, requestOpts)
+    .then(handleErrors)
+    .then(res => res.json())
+    .then(res => res.response)
 
-    if (response.statusCode < 200 || response.statusCode > 299) {
-      const err = new Error(body)
-      return callback(err)
-    }
+}
 
-    return callback(null, (body.response ? body.response : body))
-  })
+function handleErrors (res) {
+  if (res.status < 200 || res.status > 299) {
+    const err = new Error(res.statusText)
+    err.status = res.status
+
+    throw err
+  }
+
+  return res
 }
 
 export const get = (...args) => request('GET', ...args)

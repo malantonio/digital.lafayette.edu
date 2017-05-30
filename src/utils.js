@@ -22,7 +22,7 @@ export function getApiPath (path) {
 export class Store {
   constructor (opts) {
     if (typeof opts === 'string') {
-      key = opts
+      const key = opts
       opts = {key}
     }
 

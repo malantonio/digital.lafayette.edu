@@ -1,24 +1,11 @@
 import { get, stringifyQs } from '../api'
 import history from '../../history'
+import { flattenValues } from './utils'
 
-const SEARCH_PATH = '/catalog'
-const PER_PAGE_LIMIT = 50
+export const SEARCH_PATH = '/catalog.json'
+export const PER_PAGE_LIMIT = 50
 
-const flattenValues = obj => {
-  return Object.keys(obj).reduce((out, key) => {
-    if (Array.isArray(obj[key])) {
-      out[key] = obj[key].map(v => typeof v === 'object' ? v.value : v)
-    }
-
-    else {
-      out[key] = obj[key].value
-    }
-
-    return out
-  }, {})
-}
-
-export function search ({query, facets, range, meta, callback}) {
+export function search ({query, facets, range, meta}) {
   if (!meta) {
     meta = {}
   }
@@ -34,11 +21,11 @@ export function search ({query, facets, range, meta, callback}) {
   }
 
   if (facets) {
-    obj.f = flattenValues(facets)
+    obj.f = flattenValues(facets, false)
   }
 
   if (range) {
-    obj.range = flattenValues(range)
+    obj.range = flattenValues(range, true)
   }
 
   const baseQs = stringifyQs(obj)
@@ -54,5 +41,5 @@ export function search ({query, facets, range, meta, callback}) {
   })
 
   const url = `${SEARCH_PATH}?${baseQs}&${optsQs}`
-  return get(url, callback)
+  return get(url)
 }

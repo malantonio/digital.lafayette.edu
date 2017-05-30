@@ -27,4 +27,6 @@ const ResultsGallery = props => {
   )
 }
 
+ResultsGallery.propTypes = propTypes
+
 export default ResultsGallery

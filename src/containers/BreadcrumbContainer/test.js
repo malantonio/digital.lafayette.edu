@@ -1,25 +1,26 @@
 import React from 'react'
+import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import BreadcrumbContainer from './'
 
 const wrapEl = xtend => shallow(<BreadcrumbContainer {...xtend} />)
 
-describe('<BreadcrumbContainer />', () => {
-  it('renders no children when nothing is passed', () => {
+describe('<BreadcrumbContainer />', function () {
+  it('renders no children when nothing is passed', function () {
     const $el = wrapEl()
-    expect($el.find('.BreadcrumbContainer').children()).toHaveLength(0)
+    expect($el.find('.BreadcrumbContainer').children()).to.have.lengthOf(0)
   })
 
-  it('renders a Breadcrumb when the query is not empty', () => {
+  it('renders a Breadcrumb when the query is not empty', function () {
     const query = 'cool query'
     const $el = wrapEl({query})
     const $query = $el.findWhere($e => $e.key() === 'bc-query')
 
-    expect($query).toHaveLength(1)
-    expect($query.prop('item')).toEqual({value: query})
+    expect($query).to.have.lengthOf(1)
+    expect($query.prop('item')).to.deep.equal({value: query})
   })
 
-  it('renders a Breadcrumb for each facet-item', () => {
+  it('renders a Breadcrumb for each facet-item', function () {
     const facets = {
       subject: [
         {value: 'cool-subject-1', label: 'Cool Subject 1'},
@@ -36,10 +37,10 @@ describe('<BreadcrumbContainer />', () => {
     }, 0)
 
     const $el = wrapEl({facets})
-    expect($el.find('Breadcrumb')).toHaveLength(total)
+    expect($el.find('Breadcrumb')).to.have.lengthOf(total)
   })
 
-  it('renders a Breadcrumb for each range', () => {
+  it('renders a Breadcrumb for each range', function () {
     const range = {
       date_created: {
         begin: '1900',
@@ -54,10 +55,10 @@ describe('<BreadcrumbContainer />', () => {
     const total = Object.keys(range).length
 
     const $el = wrapEl({range})
-    expect($el.find('Breadcrumb')).toHaveLength(total)
+    expect($el.find('Breadcrumb')).to.have.lengthOf(total)
   })
 
-  it('uses a dictionary to obtain the label for the facet', () => {
+  it('uses a dictionary to obtain the label for the facet', function () {
     const dictionary = {
       subject: {
         label: 'Cool Subject',
@@ -84,8 +85,8 @@ describe('<BreadcrumbContainer />', () => {
     const $dc = $breadcrumbs.findWhere($b => $b.key() === 'bc-date_created-0')
     const $auth = $breadcrumbs.findWhere($b => $b.key() === 'bc-author-0')
 
-    expect($sub.prop('facet').label).toEqual(dictionary.subject.label)
-    expect($dc.prop('facet').label).toEqual(dictionary.date_created)
-    expect($auth.prop('facet').label).toEqual('author')
+    expect($sub.prop('facet').label).to.equal(dictionary.subject.label)
+    expect($dc.prop('facet').label).to.equal(dictionary.date_created)
+    expect($auth.prop('facet').label).to.equal('author')
   })
 })

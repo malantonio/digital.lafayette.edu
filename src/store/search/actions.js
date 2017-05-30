@@ -2,18 +2,10 @@ import { createAction } from 'redux-actions'
 import isEqual from 'lodash.isequal'
 import Debug from 'debug'
 
-import { search } from './endpoints'
+import { search as _search } from './endpoints'
 import { parseQs } from '../api'
 
 const debug = Debug('digital:store:search/actions')
-
-const searchCallback = dispatch => (err, response) => {
-  if (err) {
-    return dispatch(receivedSearchError(err))
-  }
-
-  return dispatch(receivedSearchResults(response))
-}
 
 const hasProperty = (obj, prop) => (
   Object.prototype.hasOwnProperty.call(obj, prop)
@@ -24,9 +16,15 @@ export const receivedSearchError = createAction('[error] search')
 export const receivedSearchResults = createAction('received search results')
 export const setSearch = createAction('set search')
 
-export const searchAtPage = page => (dispatch, getState) => {
-  debug('fetching page %d', page)
+export const searchCatalog = (dispatch, props) => {
+  dispatch(setSearch(props))
 
+  return _search(props)
+    .then(results => dispatch(receivedSearchResults(results)))
+    .catch(error => dispatch(receivedSearchError(error)))
+}
+
+export const searchAtPage = page => (dispatch, getState) => {
   const { meta, ...state } = getState().search
   const updated = {
     ...state,
@@ -36,11 +34,8 @@ export const searchAtPage = page => (dispatch, getState) => {
     }
   }
 
-  dispatch(setSearch(updated))
-
-  updated.callback = searchCallback(dispatch)
-
-  return search(updated)
+  debug('fetching page %d', page)
+  return searchCatalog(dispatch, updated)
 }
 
 // this makes the assumption that a query search does not
@@ -48,12 +43,7 @@ export const searchAtPage = page => (dispatch, getState) => {
 export const searchWithQuery = query => dispatch => {
   debug('searching with query: %s', query)
 
-  dispatch(setSearch({query}))
-
-  return search({
-    query,
-    callback: searchCallback(dispatch)
-  })
+  return searchCatalog(dispatch, {query})
 }
 
 export const searchWithQueryString = qs => dispatch => {
@@ -69,12 +59,7 @@ export const searchWithQueryString = qs => dispatch => {
     range,
   }
 
-  dispatch(setSearch(searchObj))
-
-  return search({
-    ...searchObj,
-    callback: searchCallback(dispatch)
-  })
+  return searchCatalog(dispatch, searchObj)
 }
 
 export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => {
@@ -164,14 +149,18 @@ export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => 
     }
 
     if (dirty === false) {
-      return
+      return Promise.resolve()
     }
 
     searchObj.facets = {
-      ...search.facets,
+      ...searchObj.facets,
       [name]: target,
     }
-  } // end `if (item.type === 'target') / else` block
+
+    if (target.length === 0) {
+      delete searchObj.facets[name]
+    }
+  } // end `if (item.type === 'range') / else` block
 
   // reset the page count
   searchObj.meta = {
@@ -179,10 +168,5 @@ export const toggleFacetItem = (facet, item, toggle) => (dispatch, getState) => 
     page: 1,
   }
 
-  dispatch(setSearch(searchObj))
-
-  return search({
-    ...searchObj,
-    callback: searchCallback(dispatch),
-  })
+  return searchCatalog(dispatch, searchObj)
 }

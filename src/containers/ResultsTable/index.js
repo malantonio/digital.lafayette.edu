@@ -28,8 +28,8 @@ import Debug from 'debug'
 const debug = Debug('digital:containers/ResultsTable')
 
 const propTypes = {
-  defaultFields: React.PropTypes.array,
-  docs: React.PropTypes.array.isRequired,
+  defaultFields: PropTypes.array,
+  docs: PropTypes.array.isRequired,
 }
 
 const defaultProps = {
