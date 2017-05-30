@@ -1,4 +1,4 @@
-digital.lafayette.edu ui
+digital.lafayette.edu ui [![Build Status](https://travis-ci.com/LafayetteCollegeLibraries/digital.lafayette.edu.svg)](https://travis-ci.com/LafayetteCollegeLibraries/digital.lafayette.edu)
 ========================
 
 [React](https://facebook.github.io/react) / [Redux](http://redux.js.org)
