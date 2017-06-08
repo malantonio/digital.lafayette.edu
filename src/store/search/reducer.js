@@ -5,8 +5,6 @@ import * as search from './actions'
 import { createRangeFacetItem } from './utils'
 import { session } from '../../utils'
 
-const SESSION_KEY = 'search'
-
 const debug = Debug('digital:store/search/reducer')
 
 const createFacetDictionary = facets => facets.reduce((out, facet, index) => {
@@ -23,7 +21,7 @@ export const initialState = {
 
 export default handleActions({
   [search.clearSearch]: () => {
-    session.remove(SESSION_KEY)
+    session.remove(session.keys.SEARCH)
 
     return {...initialState}
   },
@@ -117,8 +115,6 @@ export default handleActions({
       query: query || null,
       range: range || {},
     }
-
-    session.set(SESSION_KEY, search)
 
     return {
       ...search,

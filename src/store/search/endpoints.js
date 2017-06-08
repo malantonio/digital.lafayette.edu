@@ -1,6 +1,7 @@
 import { get, stringifyQs } from '../api'
 import history from '../../history'
 import { flattenValues } from './utils'
+import { session } from '../../utils'
 
 export const SEARCH_PATH = '/catalog.json'
 export const PER_PAGE_LIMIT = 50
@@ -30,6 +31,8 @@ export function search ({query, facets, range, meta}) {
 
   const baseQs = stringifyQs(obj)
   const optsQs = stringifyQs(opts)
+
+  session.set(session.keys.SEARCH, baseQs)
 
   history.push({
     pathname: '/search',

@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import TextButton from '../TextButton'
 
 const propTypes = {
   id: PropTypes.string.isRequired,
   isFetching: PropTypes.bool,
+  onReturnToSearchResults: PropTypes.func,
   title: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
 }
 
@@ -13,7 +15,7 @@ const defaultProps = {
 }
 
 const WorkHeader = props => {
-  let title, message
+  let title, message, button
 
   if (props.title) {
     if (Array.isArray(props.title)) {
@@ -37,8 +39,21 @@ const WorkHeader = props => {
     message = title
   }
 
+  if (props.onReturnToSearchResults) {
+    button = (
+      <div>
+        <TextButton
+          onClick={props.onReturnToSearchResults}
+        >
+          &lt; Return to Search Results
+        </TextButton>
+      </div>
+    )
+  }
+
   return (
     <header className="WorkHeader">
+      { button ? button : null }
       { message }
     </header>
   )
