@@ -2,15 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TextButton from '../TextButton'
 
+const defaultFetchingMessage = id => `fetching ${id}`
+const isFunction = thing => thing && typeof thing === 'function'
+
 const propTypes = {
   id: PropTypes.string.isRequired,
+
+  fetchingMessage: PropTypes.func,
   isFetching: PropTypes.bool,
   onReturnToSearchResults: PropTypes.func,
   title: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
 }
 
 const defaultProps = {
+  fetchingMessage: defaultFetchingMessage,
   isFetching: false,
+  onReturnToSearchResults: null,
   title: null,
 }
 
@@ -32,14 +39,20 @@ const WorkHeader = props => {
   }
 
   if (props.isFetching) {
-    message = `fetching ${title}`
+    if (isFunction(props.fetchingMessage)) {
+      message = props.fetchingMessage(title)
+    }
+
+    else {
+      message = defaultFetchingMessage(title)
+    }
   }
 
   else {
     message = title
   }
 
-  if (props.onReturnToSearchResults) {
+  if (isFunction(props.onReturnToSearchResults)) {
     button = (
       <div>
         <TextButton
