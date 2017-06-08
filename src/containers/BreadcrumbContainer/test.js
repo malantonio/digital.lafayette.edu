@@ -20,6 +20,13 @@ describe('<BreadcrumbContainer />', function () {
     expect($query.prop('item')).to.deep.equal({value: query})
   })
 
+  it('does not render a Breadcrumb when the query is null', function () {
+    const query = null
+    const $el = wrapEl({query})
+
+    expect($el.find('Breadcrumb')).to.have.lengthOf(0)
+  })
+
   it('renders a Breadcrumb for each facet-item', function () {
     const facets = {
       subject: [
