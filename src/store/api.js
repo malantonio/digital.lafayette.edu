@@ -39,7 +39,7 @@ const request = (method, path, body, opts, callback) => {
   return fetch(`${baseUrl}${path}`, requestOpts)
     .then(handleErrors)
     .then(res => res.json())
-    .then(res => res.response)
+    .then(res => res.response ? res.response : res)
 
 }
 

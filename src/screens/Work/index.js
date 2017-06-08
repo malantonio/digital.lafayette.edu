@@ -4,6 +4,8 @@ import MetadataTable from '../../containers/MetadataTable'
 import OpenSeadragonViewer from '../../components/OpenSeadragonViewer'
 
 import { schema } from './utils'
+import { session, hasStoredSearch } from '../../utils'
+import history from '../../history'
 
 class Work extends React.PureComponent {
   componentDidMount () {
@@ -50,6 +52,15 @@ class Work extends React.PureComponent {
     )
   }
 
+  sendToStoredSearch () {
+    const qs = session.get(session.keys.SEARCH)
+
+    history.push({
+      pathname: '/search',
+      search: qs,
+    })
+  }
+
   render () {
     const { match, work } = this.props
     const { isFetching } = work.meta
@@ -59,11 +70,16 @@ class Work extends React.PureComponent {
       ? data.id
       : match.params.id
 
+    const onReturnToSearchResults = hasStoredSearch()
+      ? this.sendToStoredSearch
+      : null
+
     return (
       <div className="Work">
         <WorkHeader
           id={id}
           isFetching={isFetching}
+          onReturnToSearchResults={onReturnToSearchResults}
           title={data ? data.title : null}
         />
 
