@@ -3,6 +3,9 @@ import Debug from 'debug'
 import * as search from './actions'
 
 import { createRangeFacetItem } from './utils'
+import { session } from '../../utils'
+
+const SESSION_KEY = 'search'
 
 const debug = Debug('digital:store/search/reducer')
 
@@ -19,7 +22,11 @@ export const initialState = {
 }
 
 export default handleActions({
-  [search.clearSearch]: () => ({...initialState}),
+  [search.clearSearch]: () => {
+    session.remove(SESSION_KEY)
+
+    return {...initialState}
+  },
 
   [search.receivedSearchError]: state => ({
     ...state,
@@ -105,16 +112,22 @@ export default handleActions({
   [search.setSearch]: (state, action) => {
     const { query, facets, range, ...opts } = action.payload
 
-    return {
+    const search = {
       facets: facets || {},
+      query: query || null,
+      range: range || {},
+    }
+
+    session.set(SESSION_KEY, search)
+
+    return {
+      ...search,
       meta: {
         ...state.meta,
         isFetching: true,
         offset: 0,
         page: opts.page || 1,
       },
-      query: query || null,
-      range: range || {},
     }
   },
 }, initialState)

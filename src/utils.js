@@ -67,6 +67,22 @@ export class Store {
     }
   }
 
+  remove (key) {
+    this.log('removing "%s"', key)
+
+    try {
+      const res = this.store.getItem(this.key)
+      const parsed = JSON.parse(res)
+
+      delete parsed[key]
+
+      const strung = JSON.stringify(parsed)
+      this.store.setItem(this.key, strung)
+    } catch (e) {
+      this.log('JSON.parse error: %s', e.message)
+    }
+  }
+
   set (key, val) {
     try {
       this.log('setting "%s" to %s', key, JSON.stringify(val))
