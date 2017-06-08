@@ -86,21 +86,21 @@ class BreadcrumbContainer extends React.PureComponent {
     return (
       <div className="BreadcrumbContainer">
         {
-          query !== ''
-          ? <Breadcrumb key="bc-query" item={{value: query}} />
-          : null
+          query === '' || query === null
+          ? null
+          : <Breadcrumb key="bc-query" item={{value: query}} />
         }
 
         {
-          fkeys.length > 0
-          ? this.renderBreadcrumbs(fkeys, facets)
-          : null
+          fkeys.length === 0
+          ? null
+          : this.renderBreadcrumbs(fkeys, facets)
         }
 
         {
-          rkeys.length > 0
-          ? this.renderBreadcrumbs(rkeys, range)
-          : null
+          rkeys.length === 0
+          ? null
+          : this.renderBreadcrumbs(rkeys, range)
         }
       </div>
     )
