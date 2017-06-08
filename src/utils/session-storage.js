@@ -1,25 +1,4 @@
-import Debug from 'debug'
-
-const noop = () => {}
-
-export function createFacetDictionary (facets) {
-  return facets.reduce((out, facet) => {
-    const { name, label } = facet
-    out[name] = { name, label }
-
-    return out
-  }, {})
-}
-
-export function getApiPath (path) {
-  if (path[0] !== '/') {
-    path = `/${path}`
-  }
-
-  return `${process.env.API_BASE_URL}${path}`
-}
-
-export class Store {
+export default class SessionStorage {
   constructor (opts) {
     if (typeof opts === 'string') {
       const key = opts
@@ -32,7 +11,7 @@ export class Store {
 
     this.store = opts.store || window.sessionStorage
     this.key = opts.key || 'store'
-    this.log = opts.log || noop
+    this.log = opts.log || function () {}
 
     // set an empty object if this is our first time w/ the store
     if (this.store.getItem(this.key) === null) {
@@ -100,5 +79,3 @@ export class Store {
     }
   }
 }
-
-export const session = new Store({key: 'dig@laf', log: Debug('digital:session')})
