@@ -17,7 +17,7 @@ describe('<WorkHeader />', function () {
   })
 
   it('calls the `fetchingMessage` prop when `isFetching` is true', function () {
-    const fetchingMessage = () => `hey I'm fetchin' here!`
+    const fetchingMessage = () => 'hey I\'m fetchin\' here!'
     const isFetching = true
 
     const $el = shallowEl({fetchingMessage, isFetching})
@@ -46,12 +46,6 @@ describe('<WorkHeader />', function () {
   describe('the "Return to Search Results button"', function () {
     it('is not rendered when `onReturnToSearchResults` is empty', function () {
       const $el = shallowEl()
-      expect($el.find('TextButton')).to.have.lengthOf(0)
-    })
-
-    it('is not rendered when `onReturnToSearchResults` is not a function', function () {
-      const onReturnToSearchResults = 'sure go ahead'
-      const $el = shallowEl({onReturnToSearchResults})
       expect($el.find('TextButton')).to.have.lengthOf(0)
     })
 
