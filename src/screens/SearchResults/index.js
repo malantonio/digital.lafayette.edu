@@ -39,6 +39,8 @@ class SearchResults extends React.PureComponent {
     this.state = {
       resultsContainer: utils.getResultsView('table'),
     }
+
+    this.maybeBuildFacetDictionary(props)
   }
 
   componentDidMount () {
@@ -93,12 +95,12 @@ class SearchResults extends React.PureComponent {
   //
   // (a) provides us an out if we want to store this in sessionStorage
   // and only do the work when deemed absolutely necessary
-  maybeBuildFacetDictionary (nextProps) {
+  maybeBuildFacetDictionary (props) {
     if (this.facetDictionary !== undefined) {
       return
     }
 
-    const { facets } = nextProps.searchResults
+    const { facets } = props.searchResults
 
     if (facets === undefined) {
       return
