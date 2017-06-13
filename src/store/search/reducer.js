@@ -77,15 +77,16 @@ export default handleActions({
 
     if (rkeys.length !== 0) {
       const needsHydration = (
-        meta.needsHydration || range[rkeys[0]].label === undefined
+        meta.needsHydration || !Array.isArray(range[rkeys[0]])
       )
 
       if (needsHydration) {
         debug('rehydrating range')
 
         const update = rkeys.reduce((out, key) => {
-          const orig = range[key]
-          out[key] = [createRangeFacetItem(key, orig.begin, orig.end)]
+          const orig = Array.isArray(range[key]) ? range[key][0] : range[key]
+          const val = orig.value && orig.value.begin ? orig.value : orig
+          out[key] = [createRangeFacetItem(key, val.begin, val.end)]
           return out
         }, {})
 
