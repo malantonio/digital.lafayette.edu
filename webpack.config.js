@@ -41,6 +41,10 @@ module.exports = {
         JSON.stringify(process.env.API_BASE_URL)
       ),
 
+      'process.env.SEARCH_PATH': (
+        JSON.stringify(process.env.SEARCH_PATH)
+      ),
+
       'process.env.NODE_ENV': (
         JSON.stringify(process.env.NODE_ENV || 'development')
       ),
