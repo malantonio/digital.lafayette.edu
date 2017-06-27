@@ -17,7 +17,7 @@ describe('<WorkHeader />', function () {
   })
 
   it('calls the `fetchingMessage` prop when `isFetching` is true', function () {
-    const fetchingMessage = () => `hey I'm fetchin' here!`
+    const fetchingMessage = () => 'hey I\'m fetchin\' here!'
     const isFetching = true
 
     const $el = shallowEl({fetchingMessage, isFetching})
