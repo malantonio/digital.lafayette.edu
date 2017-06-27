@@ -1,11 +1,13 @@
-digital.lafayette.edu ui [![Build Status](https://travis-ci.org/LafayetteCollegeLibraries)](https://travis-ci.org/LafayetteCollegeLibraries/digital.lafayette.edu)
+digital.lafayette.edu ui [![Build Status](https://travis-ci.org/LafayetteCollegeLibraries/digital.lafayette.edu.svg?branch=master)](https://travis-ci.org/LafayetteCollegeLibraries/digital.lafayette.edu) [![Coverage Status](https://coveralls.io/repos/github/LafayetteCollegeLibraries/digital.lafayette.edu/badge.svg?branch=master)](https://coveralls.io/github/LafayetteCollegeLibraries/digital.lafayette.edu?branch=master)
 ========================
 
 Proof-of-concept [React][1] / [Redux][2] front-end for [Blacklight][3]. This
 takes the path begun by [metadb-ui][4], but strips out the metadata-editing
 components to act solely as a view-layer (with some search-related state
-management). **This project is currently on hold** as we move towards a more
-traditional approach using [Hyrax][5]/[Hyku][6] - Blacklight - [Spotlight][7].
+management).
+
+**This project is currently on hold** as we move towards a more traditional
+approach using [Hyrax][5]/[Hyku][6] - Blacklight - [Spotlight][7].
 
 See [LafayetteCollegeLibraries/lafayette-preserve][8] for the [Sufia][9]-based
 backend.
