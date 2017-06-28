@@ -3,7 +3,7 @@ import history from '../../history'
 import { flattenValues } from './utils'
 import { session } from '../../utils'
 
-export const SEARCH_PATH = '/catalog.json'
+export const SEARCH_PATH = process.env.SEARCH_PATH || '/catalog.json'
 export const PER_PAGE_LIMIT = 50
 
 export function search ({query, facets, range, meta}) {
