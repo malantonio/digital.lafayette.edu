@@ -10,6 +10,7 @@ var url = require('url')
 var fs = require('fs')
 var path = require('path')
 http.createServer(function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*')
   fs.createReadStream(path.join(__dirname, 'en.json')).pipe(res)
 }).listen(process.env.PROXY_PORT || 8081)
 
