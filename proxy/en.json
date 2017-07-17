@@ -1,0 +1,2693 @@
+{
+  "response": {
+    "docs": [
+      {
+        "id": "2009002583",
+        "language_facet": [
+          "English"
+        ],
+        "format": "Book",
+        "isbn_t": [
+          "9780761447269",
+          "0761447261"
+        ],
+        "material_type_display": [
+          "p. cm."
+        ],
+        "title_display": "Maine",
+        "author_display": "Dornfeld, Margaret.",
+        "subject_geo_facet": [
+          "Maine"
+        ],
+        "published_display": [
+          "New York"
+        ],
+        "pub_date": [
+          "2011"
+        ],
+        "lc_callnum_display": [
+          "F19.3 .D67 2011"
+        ],
+        "score": 1
+      },
+      {
+        "id": "2009002600",
+        "language_facet": [
+          "English"
+        ],
+        "format": "Book",
+        "isbn_t": [
+          "9780761447320",
+          "0761447326"
+        ],
+        "material_type_display": [
+          "p. cm."
+        ],
+        "title_display": "Nebraska",
+        "author_display": "Bjorklund, Ruth.",
+        "subject_geo_facet": [
+          "Nebraska"
+        ],
+        "published_display": [
+          "New York"
+        ],
+        "pub_date": [
+          "2011"
+        ],
+        "lc_callnum_display": [
+          "F666.3 .B58 2011"
+        ],
+        "score": 1
+      },
+      {
+        "id": "2009002584",
+        "language_facet": [
+          "English"
+        ],
+        "format": "Book",
+        "isbn_t": [
+          "9780761447337",
+          "0761447334"
+        ],
+        "material_type_display": [
+          "p. cm."
+        ],
+        "title_display": "North Dakota",
+        "author_display": "McDaniel, Melissa, 1964-",
+        "subject_geo_facet": [
+          "North Dakota"
+        ],
+        "published_display": [
+          "New York"
+        ],
+        "pub_date": [
+          "2011"
+        ],
+        "lc_callnum_display": [
+          "F636.3 .M38 2011"
+        ],
+        "score": 1
+      },
+      {
+        "id": "2008053976",
+        "language_facet": [
+          "English"
+        ],
+        "format": "Book",
+        "isbn_t": [
+          "9780761341406",
+          "0761341404",
+          "9780761341406 (lib. bdg. : alk. paper)"
+        ],
+        "material_type_display": [
+          "p. cm."
+        ],
+        "title_display": "Action figures",
+        "subtitle_display": "paintings of fun, daring, and adventure",
+        "author_display": "Raczka, Bob.",
+        "subject_topic_facet": [
+          "Human figure in art",
+          "Movement, Aesthetics of",
+          "Action in art"
+        ],
+        "published_display": [
+          "Minneapolis, MN"
+        ],
+        "pub_date": [
+          "2010"
+        ],
+        "lc_callnum_display": [
+          "N7625.5 .R33 2010"
+        ],
+        "score": 1
+      },
+      {
+        "id": "2009001367",
+        "language_facet": [
+          "English"
+        ],
+        "format": "Book",
+        "material_type_display": [
+          "p. cm."
+        ],
+        "title_display": "After",
+        "author_display": "Harmel, Kristin.",
+        "subject_topic_facet": [
+          "Grief",
+          "Guilt",
+          "Family life",
+          "High schools",
+          "Schools"
+        ],
+        "published_display": [
+          "New York"
+        ],
+        "pub_date": [
+          "2010"
+        ],
+        "lc_callnum_display": [
+          "PZ7.H2116 Af 2010"
+        ],
+        "score": 1
+      },
+      {
+        "id": "2009002821",
+        "language_facet": [
+          "English"
+        ],
+        "format": "Book",
+        "isbn_t": [
+          "9781604135121",
+          "1604135123"
+        ],
+        "material_type_display": [
+          "p. cm."
+        ],
+        "title_display": "The Alamo",
+        "author_display": "Burgan, Michael.",
+        "subject_era_facet": [
+          "To 1846"
+        ],
+        "subject_geo_facet": [
+          "Alamo (San Antonio, Tex.)",
+          "Texas",
+          "San Antonio (Tex.)"
+        ],
+        "published_display": [
+          "New York"
+        ],
+        "pub_date": [
+          "2010"
+        ],
+        "lc_callnum_display": [
+          "F390 .B9124 2010"
+        ],
+        "score": 1
+      },
+      {
+        "id": "2009002349",
+        "language_facet": [
+          "English"
+        ],
+        "format": "Book",
+        "isbn_t": [
+          "9781433921872",
+          "1433921871",
+          "9781433921469",
+          "1433921464",
+          "9781433921872 (lib. bdg.)",
+          "1433921871 (lib. bdg.)",
+          "9781433921469 (soft cover)",
+          "1433921464 (soft cover)"
+        ],
+        "material_type_display": [
+          "p. cm."
+        ],
+        "title_display": "Al Gore",
+        "author_display": "McGowan, Joe, 1960-",
+        "subject_topic_facet": [
+          "Gore, Albert, 1948-",
+          "Vice-Presidents",
+          "Legislators",
+          "United States. Congress. Senate",
+          "Presidential candidates",
+          "Environmentalists"
+        ],
+        "subject_geo_facet": [
+          "United States"
+        ],
+        "published_display": [
+          "Pleasantville, NY"
+        ],
+        "pub_date": [
+          "2010"
+        ],
+        "lc_callnum_display": [
+          "E840.8.G65 M39 2010"
+        ],
+        "score": 1
+      },
+      {
+        "id": "2009002279",
+        "language_facet": [
+          "English"
+        ],
+        "format": "Book",
+        "isbn_t": [
+          "9781433920578",
+          "1433920573",
+          "9781433921285",
+          "1433921286",
+          "9781433920578 (lib. bdg.)",
+          "1433920573 (lib. bdg.)",
+          "9781433921285 (pbk.)",
+          "1433921286 (pbk.)"
+        ],
+        "material_type_display": [
+          "p. cm."
+        ],
+        "title_display": "Alien invasion!",
+        "subtitle_display": "invasive species become major menaces",
+        "author_display": "Jackson, Cari.",
+        "subject_topic_facet": [
+          "Biological invasions",
+          "Invasive plants",
+          "Nonindigenous pests"
+        ],
+        "published_display": [
+          "Pleasantville, NY"
+        ],
+        "pub_date": [
+          "2010"
+        ],
+        "lc_callnum_display": [
+          "QH353 .J33 2010"
+        ],
+        "score": 1
+      },
+      {
+        "id": "2009002245",
+        "language_facet": [
+          "English"
+        ],
+        "format": "Book",
+        "isbn_t": [
+          "9781435853300",
+          "143585330X",
+          "9781435853300 (lib. bdg.)"
+        ],
+        "material_type_display": [
+          "p. cm."
+        ],
+        "title_display": "The alkali metals",
+        "subtitle_display": "lithium, sodium, potassium, rubidium, cesium, francium",
+        "author_display": "Lew, Kristi.",
+        "subject_topic_facet": [
+          "Alkali metals",
+          "Periodic law"
+        ],
+        "published_display": [
+          "New York"
+        ],
+        "pub_date": [
+          "2010"
+        ],
+        "lc_callnum_display": [
+          "QD172.A4 L49 2010"
+        ],
+        "score": 1
+      },
+      {
+        "id": "2008054696",
+        "language_facet": [
+          "English"
+        ],
+        "format": "Book",
+        "isbn_t": [
+          "9780136078296",
+          "013607829X",
+          "9780136078296 (alk. paper)",
+          "013607829X (alk. paper)"
+        ],
+        "material_type_display": [
+          "p. cm."
+        ],
+        "title_display": "American business values",
+        "subtitle_display": "a global perspective",
+        "author_display": "Cavanagh, Gerald F.",
+        "subject_topic_facet": [
+          "Business ethics",
+          "Industries",
+          "Social responsibility of business",
+          "Free enterprise"
+        ],
+        "subject_geo_facet": [
+          "United States"
+        ],
+        "published_display": [
+          "Hall Upper Saddle River, NJ"
+        ],
+        "pub_date": [
+          "2010"
+        ],
+        "lc_callnum_display": [
+          "HF5387 .C379 2010"
+        ],
+        "score": 1
+      }
+    ],
+    "facets": [
+      {
+        "name": "format",
+        "items": [
+          {
+            "value": "Book",
+            "hits": 9627,
+            "label": "Book"
+          },
+          {
+            "value": "Microfilm",
+            "hits": 105,
+            "label": "Microfilm"
+          },
+          {
+            "value": "Kit",
+            "hits": 84,
+            "label": "Kit"
+          },
+          {
+            "value": "Electronic",
+            "hits": 25,
+            "label": "Electronic"
+          },
+          {
+            "value": "eBook",
+            "hits": 10,
+            "label": "eBook"
+          },
+          {
+            "value": "Manuscript",
+            "hits": 6,
+            "label": "Manuscript"
+          },
+          {
+            "value": "Software",
+            "hits": 6,
+            "label": "Software"
+          },
+          {
+            "value": "Unknown",
+            "hits": 5,
+            "label": "Unknown"
+          },
+          {
+            "value": "SoundDisc",
+            "hits": 2,
+            "label": "SoundDisc"
+          },
+          {
+            "value": "VideoDisc",
+            "hits": 2,
+            "label": "VideoDisc"
+          }
+        ],
+        "label": "Format"
+      },
+      {
+        "name": "pub_date",
+        "items": [
+          {
+            "value": "2008",
+            "hits": 2273,
+            "label": "2008"
+          },
+          {
+            "value": "2007",
+            "hits": 1267,
+            "label": "2007"
+          },
+          {
+            "value": "2009",
+            "hits": 1187,
+            "label": "2009"
+          },
+          {
+            "value": "2006",
+            "hits": 688,
+            "label": "2006"
+          },
+          {
+            "value": "2005",
+            "hits": 528,
+            "label": "2005"
+          },
+          {
+            "value": "2004",
+            "hits": 323,
+            "label": "2004"
+          },
+          {
+            "value": "2003",
+            "hits": 239,
+            "label": "2003"
+          },
+          {
+            "value": "2010",
+            "hits": 214,
+            "label": "2010"
+          },
+          {
+            "value": "2002",
+            "hits": 201,
+            "label": "2002"
+          },
+          {
+            "value": "2001",
+            "hits": 165,
+            "label": "2001"
+          },
+          {
+            "value": "2000",
+            "hits": 162,
+            "label": "2000"
+          },
+          {
+            "value": "1991",
+            "hits": 116,
+            "label": "1991"
+          },
+          {
+            "value": "1999",
+            "hits": 115,
+            "label": "1999"
+          },
+          {
+            "value": "1997",
+            "hits": 88,
+            "label": "1997"
+          },
+          {
+            "value": "1998",
+            "hits": 86,
+            "label": "1998"
+          },
+          {
+            "value": "1993",
+            "hits": 85,
+            "label": "1993"
+          },
+          {
+            "value": "1982",
+            "hits": 72,
+            "label": "1982"
+          },
+          {
+            "value": "1994",
+            "hits": 72,
+            "label": "1994"
+          },
+          {
+            "value": "1995",
+            "hits": 69,
+            "label": "1995"
+          },
+          {
+            "value": "1992",
+            "hits": 66,
+            "label": "1992"
+          },
+          {
+            "value": "1996",
+            "hits": 66,
+            "label": "1996"
+          },
+          {
+            "value": "1977",
+            "hits": 65,
+            "label": "1977"
+          },
+          {
+            "value": "1975",
+            "hits": 60,
+            "label": "1975"
+          },
+          {
+            "value": "1978",
+            "hits": 54,
+            "label": "1978"
+          },
+          {
+            "value": "1974",
+            "hits": 52,
+            "label": "1974"
+          },
+          {
+            "value": "1976",
+            "hits": 51,
+            "label": "1976"
+          },
+          {
+            "value": "1979",
+            "hits": 50,
+            "label": "1979"
+          },
+          {
+            "value": "1989",
+            "hits": 49,
+            "label": "1989"
+          },
+          {
+            "value": "1990",
+            "hits": 49,
+            "label": "1990"
+          },
+          {
+            "value": "1983",
+            "hits": 43,
+            "label": "1983"
+          },
+          {
+            "value": "1971",
+            "hits": 41,
+            "label": "1971"
+          },
+          {
+            "value": "1985",
+            "hits": 41,
+            "label": "1985"
+          },
+          {
+            "value": "1987",
+            "hits": 41,
+            "label": "1987"
+          },
+          {
+            "value": "1988",
+            "hits": 41,
+            "label": "1988"
+          },
+          {
+            "value": "1980",
+            "hits": 40,
+            "label": "1980"
+          },
+          {
+            "value": "1981",
+            "hits": 38,
+            "label": "1981"
+          },
+          {
+            "value": "1986",
+            "hits": 37,
+            "label": "1986"
+          },
+          {
+            "value": "1984",
+            "hits": 34,
+            "label": "1984"
+          },
+          {
+            "value": "1970",
+            "hits": 32,
+            "label": "1970"
+          },
+          {
+            "value": "1973",
+            "hits": 32,
+            "label": "1973"
+          },
+          {
+            "value": "1967",
+            "hits": 30,
+            "label": "1967"
+          },
+          {
+            "value": "1969",
+            "hits": 30,
+            "label": "1969"
+          },
+          {
+            "value": "1972",
+            "hits": 28,
+            "label": "1972"
+          },
+          {
+            "value": "1968",
+            "hits": 26,
+            "label": "1968"
+          },
+          {
+            "value": "1965",
+            "hits": 25,
+            "label": "1965"
+          },
+          {
+            "value": "1966",
+            "hits": 18,
+            "label": "1966"
+          },
+          {
+            "value": "1940",
+            "hits": 17,
+            "label": "1940"
+          },
+          {
+            "value": "1962",
+            "hits": 16,
+            "label": "1962"
+          },
+          {
+            "value": "1964",
+            "hits": 15,
+            "label": "1964"
+          },
+          {
+            "value": "1957",
+            "hits": 14,
+            "label": "1957"
+          },
+          {
+            "value": "1961",
+            "hits": 14,
+            "label": "1961"
+          },
+          {
+            "value": "1900",
+            "hits": 13,
+            "label": "1900"
+          },
+          {
+            "value": "1925",
+            "hits": 13,
+            "label": "1925"
+          },
+          {
+            "value": "1937",
+            "hits": 13,
+            "label": "1937"
+          },
+          {
+            "value": "1953",
+            "hits": 13,
+            "label": "1953"
+          },
+          {
+            "value": "1963",
+            "hits": 13,
+            "label": "1963"
+          },
+          {
+            "value": "1917",
+            "hits": 12,
+            "label": "1917"
+          },
+          {
+            "value": "1930",
+            "hits": 12,
+            "label": "1930"
+          },
+          {
+            "value": "1936",
+            "hits": 12,
+            "label": "1936"
+          },
+          {
+            "value": "1939",
+            "hits": 12,
+            "label": "1939"
+          },
+          {
+            "value": "1942",
+            "hits": 12,
+            "label": "1942"
+          },
+          {
+            "value": "1955",
+            "hits": 12,
+            "label": "1955"
+          },
+          {
+            "value": "1946",
+            "hits": 11,
+            "label": "1946"
+          },
+          {
+            "value": "1932",
+            "hits": 10,
+            "label": "1932"
+          },
+          {
+            "value": "1947",
+            "hits": 10,
+            "label": "1947"
+          },
+          {
+            "value": "1949",
+            "hits": 10,
+            "label": "1949"
+          },
+          {
+            "value": "1956",
+            "hits": 10,
+            "label": "1956"
+          },
+          {
+            "value": "1959",
+            "hits": 10,
+            "label": "1959"
+          },
+          {
+            "value": "1924",
+            "hits": 9,
+            "label": "1924"
+          },
+          {
+            "value": "1931",
+            "hits": 9,
+            "label": "1931"
+          },
+          {
+            "value": "1938",
+            "hits": 9,
+            "label": "1938"
+          },
+          {
+            "value": "1948",
+            "hits": 9,
+            "label": "1948"
+          },
+          {
+            "value": "1954",
+            "hits": 9,
+            "label": "1954"
+          },
+          {
+            "value": "1960",
+            "hits": 9,
+            "label": "1960"
+          },
+          {
+            "value": "1888",
+            "hits": 8,
+            "label": "1888"
+          },
+          {
+            "value": "1910",
+            "hits": 8,
+            "label": "1910"
+          },
+          {
+            "value": "1913",
+            "hits": 8,
+            "label": "1913"
+          },
+          {
+            "value": "1914",
+            "hits": 8,
+            "label": "1914"
+          },
+          {
+            "value": "1915",
+            "hits": 8,
+            "label": "1915"
+          },
+          {
+            "value": "1941",
+            "hits": 8,
+            "label": "1941"
+          },
+          {
+            "value": "1943",
+            "hits": 8,
+            "label": "1943"
+          },
+          {
+            "value": "1952",
+            "hits": 8,
+            "label": "1952"
+          },
+          {
+            "value": "1958",
+            "hits": 8,
+            "label": "1958"
+          },
+          {
+            "value": "1911",
+            "hits": 7,
+            "label": "1911"
+          },
+          {
+            "value": "1918",
+            "hits": 7,
+            "label": "1918"
+          },
+          {
+            "value": "1923",
+            "hits": 7,
+            "label": "1923"
+          },
+          {
+            "value": "1926",
+            "hits": 7,
+            "label": "1926"
+          },
+          {
+            "value": "1929",
+            "hits": 7,
+            "label": "1929"
+          },
+          {
+            "value": "1945",
+            "hits": 7,
+            "label": "1945"
+          },
+          {
+            "value": "1893",
+            "hits": 6,
+            "label": "1893"
+          },
+          {
+            "value": "1896",
+            "hits": 6,
+            "label": "1896"
+          },
+          {
+            "value": "1904",
+            "hits": 6,
+            "label": "1904"
+          },
+          {
+            "value": "1909",
+            "hits": 6,
+            "label": "1909"
+          },
+          {
+            "value": "1928",
+            "hits": 6,
+            "label": "1928"
+          },
+          {
+            "value": "1934",
+            "hits": 6,
+            "label": "1934"
+          },
+          {
+            "value": "1935",
+            "hits": 6,
+            "label": "1935"
+          },
+          {
+            "value": "1944",
+            "hits": 6,
+            "label": "1944"
+          },
+          {
+            "value": "1951",
+            "hits": 6,
+            "label": "1951"
+          },
+          {
+            "value": "1885",
+            "hits": 5,
+            "label": "1885"
+          },
+          {
+            "value": "1894",
+            "hits": 5,
+            "label": "1894"
+          }
+        ],
+        "label": "Pub Date"
+      },
+      {
+        "name": "subject_topic_facet",
+        "items": [
+          {
+            "value": "Women",
+            "hits": 178,
+            "label": "Women"
+          },
+          {
+            "value": "Precalculus",
+            "hits": 107,
+            "label": "Precalculus"
+          },
+          {
+            "value": "World War, 1939-1945",
+            "hits": 85,
+            "label": "World War, 1939-1945"
+          },
+          {
+            "value": "Cataloging of archival materials",
+            "hits": 80,
+            "label": "Cataloging of archival materials"
+          },
+          {
+            "value": "African Americans",
+            "hits": 73,
+            "label": "African Americans"
+          },
+          {
+            "value": "Mystery fiction",
+            "hits": 71,
+            "label": "Mystery fiction"
+          },
+          {
+            "value": "Law",
+            "hits": 65,
+            "label": "Law"
+          },
+          {
+            "value": "Large type books",
+            "hits": 64,
+            "label": "Large type books"
+          },
+          {
+            "value": "Love stories",
+            "hits": 63,
+            "label": "Love stories"
+          },
+          {
+            "value": "Bible",
+            "hits": 62,
+            "label": "Bible"
+          },
+          {
+            "value": "Mathematics",
+            "hits": 62,
+            "label": "Mathematics"
+          },
+          {
+            "value": "Catholic Church",
+            "hits": 55,
+            "label": "Catholic Church"
+          },
+          {
+            "value": "Presidents",
+            "hits": 55,
+            "label": "Presidents"
+          },
+          {
+            "value": "Moratorium on payment of debts",
+            "hits": 52,
+            "label": "Moratorium on payment of debts"
+          },
+          {
+            "value": "Islam",
+            "hits": 51,
+            "label": "Islam"
+          },
+          {
+            "value": "Education",
+            "hits": 50,
+            "label": "Education"
+          },
+          {
+            "value": "Schools",
+            "hits": 50,
+            "label": "Schools"
+          },
+          {
+            "value": "English language",
+            "hits": 49,
+            "label": "English language"
+          },
+          {
+            "value": "Environmental policy",
+            "hits": 41,
+            "label": "Environmental policy"
+          },
+          {
+            "value": "Children",
+            "hits": 40,
+            "label": "Children"
+          },
+          {
+            "value": "Labor laws and legislation",
+            "hits": 40,
+            "label": "Labor laws and legislation"
+          }
+        ],
+        "label": "Subject Topic Facet"
+      },
+      {
+        "name": "language_facet",
+        "items": [
+          {
+            "value": "English",
+            "hits": 5893,
+            "label": "English"
+          },
+          {
+            "value": "Spanish",
+            "hits": 478,
+            "label": "Spanish"
+          },
+          {
+            "value": "French",
+            "hits": 360,
+            "label": "French"
+          },
+          {
+            "value": "German",
+            "hits": 326,
+            "label": "German"
+          },
+          {
+            "value": "Arabic",
+            "hits": 317,
+            "label": "Arabic"
+          },
+          {
+            "value": "Italian",
+            "hits": 311,
+            "label": "Italian"
+          },
+          {
+            "value": "Chinese",
+            "hits": 288,
+            "label": "Chinese"
+          },
+          {
+            "value": "Portuguese",
+            "hits": 241,
+            "label": "Portuguese"
+          },
+          {
+            "value": "Russian",
+            "hits": 210,
+            "label": "Russian"
+          },
+          {
+            "value": "Indonesian",
+            "hits": 183,
+            "label": "Indonesian"
+          },
+          {
+            "value": "Urdu",
+            "hits": 144,
+            "label": "Urdu"
+          }
+        ],
+        "label": "Language Facet"
+      },
+      {
+        "name": "lc_1letter_facet",
+        "items": [],
+        "label": "Lc 1letter Facet"
+      },
+      {
+        "name": "subject_geo_facet",
+        "items": [
+          {
+            "value": "United States",
+            "hits": 889,
+            "label": "United States"
+          },
+          {
+            "value": "China",
+            "hits": 215,
+            "label": "China"
+          },
+          {
+            "value": "India",
+            "hits": 213,
+            "label": "India"
+          },
+          {
+            "value": "Brazil",
+            "hits": 190,
+            "label": "Brazil"
+          },
+          {
+            "value": "Great Britain",
+            "hits": 169,
+            "label": "Great Britain"
+          },
+          {
+            "value": "Italy",
+            "hits": 166,
+            "label": "Italy"
+          },
+          {
+            "value": "France",
+            "hits": 106,
+            "label": "France"
+          },
+          {
+            "value": "Germany",
+            "hits": 102,
+            "label": "Germany"
+          },
+          {
+            "value": "Japan",
+            "hits": 96,
+            "label": "Japan"
+          },
+          {
+            "value": "Vietnam",
+            "hits": 90,
+            "label": "Vietnam"
+          },
+          {
+            "value": "Mexico",
+            "hits": 88,
+            "label": "Mexico"
+          },
+          {
+            "value": "Soviet Union",
+            "hits": 82,
+            "label": "Soviet Union"
+          },
+          {
+            "value": "Russia (Federation)",
+            "hits": 79,
+            "label": "Russia (Federation)"
+          },
+          {
+            "value": "Spain",
+            "hits": 77,
+            "label": "Spain"
+          },
+          {
+            "value": "Hungary",
+            "hits": 74,
+            "label": "Hungary"
+          },
+          {
+            "value": "England",
+            "hits": 70,
+            "label": "England"
+          },
+          {
+            "value": "Indonesia",
+            "hits": 59,
+            "label": "Indonesia"
+          },
+          {
+            "value": "Europe",
+            "hits": 53,
+            "label": "Europe"
+          },
+          {
+            "value": "Korea",
+            "hits": 40,
+            "label": "Korea"
+          },
+          {
+            "value": "New York (State)",
+            "hits": 39,
+            "label": "New York (State)"
+          },
+          {
+            "value": "Philippines",
+            "hits": 38,
+            "label": "Philippines"
+          },
+          {
+            "value": "Canada",
+            "hits": 37,
+            "label": "Canada"
+          },
+          {
+            "value": "Poland",
+            "hits": 37,
+            "label": "Poland"
+          },
+          {
+            "value": "Iran",
+            "hits": 36,
+            "label": "Iran"
+          },
+          {
+            "value": "Egypt",
+            "hits": 35,
+            "label": "Egypt"
+          },
+          {
+            "value": "Latin America",
+            "hits": 33,
+            "label": "Latin America"
+          },
+          {
+            "value": "Netherlands",
+            "hits": 33,
+            "label": "Netherlands"
+          },
+          {
+            "value": "Israel",
+            "hits": 32,
+            "label": "Israel"
+          },
+          {
+            "value": "Africa",
+            "hits": 31,
+            "label": "Africa"
+          },
+          {
+            "value": "Serbia",
+            "hits": 31,
+            "label": "Serbia"
+          },
+          {
+            "value": "Argentina",
+            "hits": 30,
+            "label": "Argentina"
+          },
+          {
+            "value": "Russia",
+            "hits": 30,
+            "label": "Russia"
+          },
+          {
+            "value": "Pakistan",
+            "hits": 29,
+            "label": "Pakistan"
+          },
+          {
+            "value": "Sri Lanka",
+            "hits": 29,
+            "label": "Sri Lanka"
+          },
+          {
+            "value": "Ireland",
+            "hits": 28,
+            "label": "Ireland"
+          },
+          {
+            "value": "New York",
+            "hits": 28,
+            "label": "New York"
+          },
+          {
+            "value": "Germany (West)",
+            "hits": 27,
+            "label": "Germany (West)"
+          },
+          {
+            "value": "Thailand",
+            "hits": 27,
+            "label": "Thailand"
+          },
+          {
+            "value": "European Union countries",
+            "hits": 26,
+            "label": "European Union countries"
+          },
+          {
+            "value": "Washington (D.C.)",
+            "hits": 26,
+            "label": "Washington (D.C.)"
+          },
+          {
+            "value": "Korea (South)",
+            "hits": 25,
+            "label": "Korea (South)"
+          },
+          {
+            "value": "Arab countries",
+            "hits": 24,
+            "label": "Arab countries"
+          },
+          {
+            "value": "Taiwan",
+            "hits": 24,
+            "label": "Taiwan"
+          },
+          {
+            "value": "Australia",
+            "hits": 23,
+            "label": "Australia"
+          },
+          {
+            "value": "Austria",
+            "hits": 23,
+            "label": "Austria"
+          },
+          {
+            "value": "Texas",
+            "hits": 23,
+            "label": "Texas"
+          },
+          {
+            "value": "Illinois",
+            "hits": 21,
+            "label": "Illinois"
+          },
+          {
+            "value": "Nepal",
+            "hits": 21,
+            "label": "Nepal"
+          },
+          {
+            "value": "California",
+            "hits": 20,
+            "label": "California"
+          },
+          {
+            "value": "Iraq",
+            "hits": 20,
+            "label": "Iraq"
+          },
+          {
+            "value": "Middle East",
+            "hits": 20,
+            "label": "Middle East"
+          },
+          {
+            "value": "Nigeria",
+            "hits": 20,
+            "label": "Nigeria"
+          },
+          {
+            "value": "Romania",
+            "hits": 20,
+            "label": "Romania"
+          },
+          {
+            "value": "Rome",
+            "hits": 20,
+            "label": "Rome"
+          },
+          {
+            "value": "Southern States",
+            "hits": 19,
+            "label": "Southern States"
+          },
+          {
+            "value": "Asia",
+            "hits": 18,
+            "label": "Asia"
+          },
+          {
+            "value": "Dalian Shi (China)",
+            "hits": 18,
+            "label": "Dalian Shi (China)"
+          },
+          {
+            "value": "Denmark",
+            "hits": 18,
+            "label": "Denmark"
+          },
+          {
+            "value": "New Zealand",
+            "hits": 18,
+            "label": "New Zealand"
+          },
+          {
+            "value": "Sweden",
+            "hits": 18,
+            "label": "Sweden"
+          },
+          {
+            "value": "大连市 (China)",
+            "hits": 18,
+            "label": "大连市 (China)"
+          },
+          {
+            "value": "Louisiana",
+            "hits": 17,
+            "label": "Louisiana"
+          },
+          {
+            "value": "Minnesota",
+            "hits": 17,
+            "label": "Minnesota"
+          },
+          {
+            "value": "Bangladesh",
+            "hits": 16,
+            "label": "Bangladesh"
+          },
+          {
+            "value": "Developing countries",
+            "hits": 16,
+            "label": "Developing countries"
+          },
+          {
+            "value": "South Africa",
+            "hits": 16,
+            "label": "South Africa"
+          },
+          {
+            "value": "Greece",
+            "hits": 15,
+            "label": "Greece"
+          },
+          {
+            "value": "Malaysia",
+            "hits": 15,
+            "label": "Malaysia"
+          },
+          {
+            "value": "Massachusetts",
+            "hits": 15,
+            "label": "Massachusetts"
+          },
+          {
+            "value": "New York (N.Y.)",
+            "hits": 15,
+            "label": "New York (N.Y.)"
+          },
+          {
+            "value": "Peru",
+            "hits": 15,
+            "label": "Peru"
+          },
+          {
+            "value": "Belgium",
+            "hits": 14,
+            "label": "Belgium"
+          },
+          {
+            "value": "Bulgaria",
+            "hits": 14,
+            "label": "Bulgaria"
+          },
+          {
+            "value": "Dalian Shi",
+            "hits": 14,
+            "label": "Dalian Shi"
+          },
+          {
+            "value": "Portugal",
+            "hits": 14,
+            "label": "Portugal"
+          },
+          {
+            "value": "Scotland",
+            "hits": 14,
+            "label": "Scotland"
+          },
+          {
+            "value": "Ukraine",
+            "hits": 14,
+            "label": "Ukraine"
+          },
+          {
+            "value": "Chile",
+            "hits": 13,
+            "label": "Chile"
+          },
+          {
+            "value": "London (England)",
+            "hits": 13,
+            "label": "London (England)"
+          },
+          {
+            "value": "Pennsylvania",
+            "hits": 13,
+            "label": "Pennsylvania"
+          },
+          {
+            "value": "Turkey",
+            "hits": 13,
+            "label": "Turkey"
+          },
+          {
+            "value": "Korea (North)",
+            "hits": 12,
+            "label": "Korea (North)"
+          },
+          {
+            "value": "London",
+            "hits": 12,
+            "label": "London"
+          },
+          {
+            "value": "Ohio",
+            "hits": 12,
+            "label": "Ohio"
+          },
+          {
+            "value": "Afghanistan",
+            "hits": 11,
+            "label": "Afghanistan"
+          },
+          {
+            "value": "Europe, Eastern",
+            "hits": 11,
+            "label": "Europe, Eastern"
+          },
+          {
+            "value": "Montenegro",
+            "hits": 11,
+            "label": "Montenegro"
+          },
+          {
+            "value": "Cuba",
+            "hits": 10,
+            "label": "Cuba"
+          },
+          {
+            "value": "Germany (East)",
+            "hits": 10,
+            "label": "Germany (East)"
+          },
+          {
+            "value": "Hong Kong (China)",
+            "hits": 10,
+            "label": "Hong Kong (China)"
+          },
+          {
+            "value": "Islamic countries",
+            "hits": 10,
+            "label": "Islamic countries"
+          },
+          {
+            "value": "Singapore",
+            "hits": 10,
+            "label": "Singapore"
+          },
+          {
+            "value": "Southeast Asia",
+            "hits": 10,
+            "label": "Southeast Asia"
+          },
+          {
+            "value": "Switzerland",
+            "hits": 10,
+            "label": "Switzerland"
+          },
+          {
+            "value": "Virginia",
+            "hits": 10,
+            "label": "Virginia"
+          },
+          {
+            "value": "Yugoslavia",
+            "hits": 10,
+            "label": "Yugoslavia"
+          },
+          {
+            "value": "Bolivia",
+            "hits": 9,
+            "label": "Bolivia"
+          },
+          {
+            "value": "Chicago (Ill.)",
+            "hits": 9,
+            "label": "Chicago (Ill.)"
+          },
+          {
+            "value": "Ghana",
+            "hits": 9,
+            "label": "Ghana"
+          },
+          {
+            "value": "Morocco",
+            "hits": 9,
+            "label": "Morocco"
+          }
+        ],
+        "label": "Subject Geo Facet"
+      },
+      {
+        "name": "subject_era_facet",
+        "items": [
+          {
+            "value": "20th century",
+            "hits": 458,
+            "label": "20th century"
+          },
+          {
+            "value": "19th century",
+            "hits": 159,
+            "label": "19th century"
+          },
+          {
+            "value": "21st century",
+            "hits": 111,
+            "label": "21st century"
+          },
+          {
+            "value": "18th century",
+            "hits": 41,
+            "label": "18th century"
+          },
+          {
+            "value": "Civil War, 1861-1865",
+            "hits": 35,
+            "label": "Civil War, 1861-1865"
+          },
+          {
+            "value": "17th century",
+            "hits": 29,
+            "label": "17th century"
+          },
+          {
+            "value": "2001-",
+            "hits": 29,
+            "label": "2001-"
+          },
+          {
+            "value": "16th century",
+            "hits": 26,
+            "label": "16th century"
+          },
+          {
+            "value": "1989-",
+            "hits": 22,
+            "label": "1989-"
+          },
+          {
+            "value": "1991-",
+            "hits": 21,
+            "label": "1991-"
+          },
+          {
+            "value": "To 1500",
+            "hits": 21,
+            "label": "To 1500"
+          },
+          {
+            "value": "1945-",
+            "hits": 19,
+            "label": "1945-"
+          },
+          {
+            "value": "1945-1989",
+            "hits": 16,
+            "label": "1945-1989"
+          },
+          {
+            "value": "1985-1991",
+            "hits": 14,
+            "label": "1985-1991"
+          },
+          {
+            "value": "Edo period, 1600-1868",
+            "hits": 13,
+            "label": "Edo period, 1600-1868"
+          },
+          {
+            "value": "2000-",
+            "hits": 10,
+            "label": "2000-"
+          },
+          {
+            "value": "20e siècle",
+            "hits": 10,
+            "label": "20e siècle"
+          },
+          {
+            "value": "1960-",
+            "hits": 9,
+            "label": "1960-"
+          },
+          {
+            "value": "1997-",
+            "hits": 9,
+            "label": "1997-"
+          },
+          {
+            "value": "Revolution, 1775-1783",
+            "hits": 8,
+            "label": "Revolution, 1775-1783"
+          },
+          {
+            "value": "1558-1603",
+            "hits": 7,
+            "label": "1558-1603"
+          },
+          {
+            "value": "1865-1950",
+            "hits": 7,
+            "label": "1865-1950"
+          },
+          {
+            "value": "1990-",
+            "hits": 7,
+            "label": "1990-"
+          },
+          {
+            "value": "1918-1945",
+            "hits": 6,
+            "label": "1918-1945"
+          },
+          {
+            "value": "1933-1945",
+            "hits": 6,
+            "label": "1933-1945"
+          },
+          {
+            "value": "1969-1974",
+            "hits": 6,
+            "label": "1969-1974"
+          },
+          {
+            "value": "1970-",
+            "hits": 6,
+            "label": "1970-"
+          },
+          {
+            "value": "1993-",
+            "hits": 6,
+            "label": "1993-"
+          },
+          {
+            "value": "750-1258",
+            "hits": 6,
+            "label": "750-1258"
+          },
+          {
+            "value": "Colonial period, ca. 1600-1775",
+            "hits": 6,
+            "label": "Colonial period, ca. 1600-1775"
+          },
+          {
+            "value": "Qing dynasty, 1644-1912",
+            "hits": 6,
+            "label": "Qing dynasty, 1644-1912"
+          },
+          {
+            "value": "Revolution, 1956",
+            "hits": 6,
+            "label": "Revolution, 1956"
+          },
+          {
+            "value": "1947-",
+            "hits": 5,
+            "label": "1947-"
+          },
+          {
+            "value": "1949-",
+            "hits": 5,
+            "label": "1949-"
+          },
+          {
+            "value": "1951-",
+            "hits": 5,
+            "label": "1951-"
+          },
+          {
+            "value": "1979-",
+            "hits": 5,
+            "label": "1979-"
+          },
+          {
+            "value": "1992-",
+            "hits": 5,
+            "label": "1992-"
+          },
+          {
+            "value": "1998-",
+            "hits": 5,
+            "label": "1998-"
+          },
+          {
+            "value": "622-750",
+            "hits": 5,
+            "label": "622-750"
+          },
+          {
+            "value": "15th century",
+            "hits": 4,
+            "label": "15th century"
+          },
+          {
+            "value": "1775-1865",
+            "hits": 4,
+            "label": "1775-1865"
+          },
+          {
+            "value": "1783-1865",
+            "hits": 4,
+            "label": "1783-1865"
+          },
+          {
+            "value": "1945-1975",
+            "hits": 4,
+            "label": "1945-1975"
+          },
+          {
+            "value": "1976-2000",
+            "hits": 4,
+            "label": "1976-2000"
+          },
+          {
+            "value": "1980-",
+            "hits": 4,
+            "label": "1980-"
+          },
+          {
+            "value": "1986-",
+            "hits": 4,
+            "label": "1986-"
+          },
+          {
+            "value": "1994-",
+            "hits": 4,
+            "label": "1994-"
+          },
+          {
+            "value": "2002-",
+            "hits": 4,
+            "label": "2002-"
+          },
+          {
+            "value": "2005-2015",
+            "hits": 4,
+            "label": "2005-2015"
+          },
+          {
+            "value": "Charles II, 1660-1685",
+            "hits": 4,
+            "label": "Charles II, 1660-1685"
+          },
+          {
+            "value": "Chosŏn dynasty, 1392-1910",
+            "hits": 4,
+            "label": "Chosŏn dynasty, 1392-1910"
+          },
+          {
+            "value": "Civil War, 1945-1949",
+            "hits": 4,
+            "label": "Civil War, 1945-1949"
+          },
+          {
+            "value": "Elizabeth, 1558-1603",
+            "hits": 4,
+            "label": "Elizabeth, 1558-1603"
+          },
+          {
+            "value": "Japanese occupation, 1942-1945",
+            "hits": 4,
+            "label": "Japanese occupation, 1942-1945"
+          },
+          {
+            "value": "Primitive and early church, ca. 30-600",
+            "hits": 4,
+            "label": "Primitive and early church, ca. 30-600"
+          },
+          {
+            "value": "1057-1603",
+            "hits": 3,
+            "label": "1057-1603"
+          },
+          {
+            "value": "13th century",
+            "hits": 3,
+            "label": "13th century"
+          },
+          {
+            "value": "1775-1783",
+            "hits": 3,
+            "label": "1775-1783"
+          },
+          {
+            "value": "1861-1865",
+            "hits": 3,
+            "label": "1861-1865"
+          },
+          {
+            "value": "1864-1910",
+            "hits": 3,
+            "label": "1864-1910"
+          },
+          {
+            "value": "1918-1933",
+            "hits": 3,
+            "label": "1918-1933"
+          },
+          {
+            "value": "1948-",
+            "hits": 3,
+            "label": "1948-"
+          },
+          {
+            "value": "1949-1976",
+            "hits": 3,
+            "label": "1949-1976"
+          },
+          {
+            "value": "1971-",
+            "hits": 3,
+            "label": "1971-"
+          },
+          {
+            "value": "1974-1977",
+            "hits": 3,
+            "label": "1974-1977"
+          },
+          {
+            "value": "1977-1981",
+            "hits": 3,
+            "label": "1977-1981"
+          },
+          {
+            "value": "1981-1989",
+            "hits": 3,
+            "label": "1981-1989"
+          },
+          {
+            "value": "1986-1991",
+            "hits": 3,
+            "label": "1986-1991"
+          },
+          {
+            "value": "1988-2000",
+            "hits": 3,
+            "label": "1988-2000"
+          },
+          {
+            "value": "1989-1990",
+            "hits": 3,
+            "label": "1989-1990"
+          },
+          {
+            "value": "2008",
+            "hits": 3,
+            "label": "2008"
+          },
+          {
+            "value": "Bombardment, 1940-1945",
+            "hits": 3,
+            "label": "Bombardment, 1940-1945"
+          },
+          {
+            "value": "Civil War, 1936-1939",
+            "hits": 3,
+            "label": "Civil War, 1936-1939"
+          },
+          {
+            "value": "Early modern, 1500-1700",
+            "hits": 3,
+            "label": "Early modern, 1500-1700"
+          },
+          {
+            "value": "Heian period, 794-1185",
+            "hits": 3,
+            "label": "Heian period, 794-1185"
+          },
+          {
+            "value": "Koryŏ period, 935-1392",
+            "hits": 3,
+            "label": "Koryŏ period, 935-1392"
+          },
+          {
+            "value": "Middle Ages, 600-1500",
+            "hits": 3,
+            "label": "Middle Ages, 600-1500"
+          },
+          {
+            "value": "Middle English, 1100-1500",
+            "hits": 3,
+            "label": "Middle English, 1100-1500"
+          },
+          {
+            "value": "Ming-Qing dynasties, 1368-1912",
+            "hits": 3,
+            "label": "Ming-Qing dynasties, 1368-1912"
+          },
+          {
+            "value": "Republic, 1912-1949",
+            "hits": 3,
+            "label": "Republic, 1912-1949"
+          },
+          {
+            "value": "To 332 B.C.",
+            "hits": 3,
+            "label": "To 332 B.C."
+          },
+          {
+            "value": "To 70 A.D.",
+            "hits": 3,
+            "label": "To 70 A.D."
+          },
+          {
+            "value": "Tudors, 1485-1603",
+            "hits": 3,
+            "label": "Tudors, 1485-1603"
+          },
+          {
+            "value": "1066-1485",
+            "hits": 2,
+            "label": "1066-1485"
+          },
+          {
+            "value": "1185-1600",
+            "hits": 2,
+            "label": "1185-1600"
+          },
+          {
+            "value": "1500-1800",
+            "hits": 2,
+            "label": "1500-1800"
+          },
+          {
+            "value": "1534-1921",
+            "hits": 2,
+            "label": "1534-1921"
+          },
+          {
+            "value": "168 B.C.-135 A.D.",
+            "hits": 2,
+            "label": "168 B.C.-135 A.D."
+          },
+          {
+            "value": "1760-1860",
+            "hits": 2,
+            "label": "1760-1860"
+          },
+          {
+            "value": "1762-1878",
+            "hits": 2,
+            "label": "1762-1878"
+          },
+          {
+            "value": "1801-1917",
+            "hits": 2,
+            "label": "1801-1917"
+          },
+          {
+            "value": "1817-1860",
+            "hits": 2,
+            "label": "1817-1860"
+          },
+          {
+            "value": "1824",
+            "hits": 2,
+            "label": "1824"
+          },
+          {
+            "value": "1863-1877",
+            "hits": 2,
+            "label": "1863-1877"
+          },
+          {
+            "value": "1865-1918",
+            "hits": 2,
+            "label": "1865-1918"
+          },
+          {
+            "value": "1868-",
+            "hits": 2,
+            "label": "1868-"
+          },
+          {
+            "value": "1912-1949",
+            "hits": 2,
+            "label": "1912-1949"
+          },
+          {
+            "value": "1919-1947",
+            "hits": 2,
+            "label": "1919-1947"
+          },
+          {
+            "value": "1928-1937",
+            "hits": 2,
+            "label": "1928-1937"
+          },
+          {
+            "value": "1936-1953",
+            "hits": 2,
+            "label": "1936-1953"
+          }
+        ],
+        "label": "Subject Era Facet"
+      },
+      {
+        "name": "example_pivot_field",
+        "items": [
+          {
+            "value": "Book",
+            "hits": 9627,
+            "field": "format",
+            "items": [
+              {
+                "value": "English",
+                "hits": 5743,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              },
+              {
+                "value": "Spanish",
+                "hits": 477,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              },
+              {
+                "value": "French",
+                "hits": 354,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              },
+              {
+                "value": "German",
+                "hits": 321,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              },
+              {
+                "value": "Arabic",
+                "hits": 315,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              },
+              {
+                "value": "Italian",
+                "hits": 309,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              },
+              {
+                "value": "Chinese",
+                "hits": 287,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              },
+              {
+                "value": "Portuguese",
+                "hits": 240,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              },
+              {
+                "value": "Russian",
+                "hits": 208,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              },
+              {
+                "value": "Indonesian",
+                "hits": 178,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              },
+              {
+                "value": "Urdu",
+                "hits": 142,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Book"
+                }
+              }
+            ],
+            "fq": {},
+            "label": "Book"
+          },
+          {
+            "value": "Microfilm",
+            "hits": 105,
+            "field": "format",
+            "items": [
+              {
+                "value": "Thai",
+                "hits": 56,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              },
+              {
+                "value": "English",
+                "hits": 24,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              },
+              {
+                "value": "Khmer",
+                "hits": 7,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              },
+              {
+                "value": "Mon-Khmer (Other)",
+                "hits": 7,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              },
+              {
+                "value": "Javanese",
+                "hits": 5,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              },
+              {
+                "value": "Indonesian",
+                "hits": 4,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              },
+              {
+                "value": "Urdu",
+                "hits": 2,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              },
+              {
+                "value": "Balinese",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              },
+              {
+                "value": "Hindi",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              },
+              {
+                "value": "Lao",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              },
+              {
+                "value": "Marathi",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Microfilm"
+                }
+              }
+            ],
+            "fq": {},
+            "label": "Microfilm"
+          },
+          {
+            "value": "Kit",
+            "hits": 84,
+            "field": "format",
+            "items": [
+              {
+                "value": "English",
+                "hits": 83,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Kit"
+                }
+              },
+              {
+                "value": "French",
+                "hits": 5,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Kit"
+                }
+              },
+              {
+                "value": "German",
+                "hits": 4,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Kit"
+                }
+              },
+              {
+                "value": "Russian",
+                "hits": 2,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Kit"
+                }
+              },
+              {
+                "value": "Arabic",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Kit"
+                }
+              },
+              {
+                "value": "Hungarian",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Kit"
+                }
+              },
+              {
+                "value": "Italian",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Kit"
+                }
+              },
+              {
+                "value": "Portuguese",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Kit"
+                }
+              },
+              {
+                "value": "Spanish",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Kit"
+                }
+              },
+              {
+                "value": "Vietnamese",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Kit"
+                }
+              }
+            ],
+            "fq": {},
+            "label": "Kit"
+          },
+          {
+            "value": "Electronic",
+            "hits": 25,
+            "field": "format",
+            "items": [
+              {
+                "value": "English",
+                "hits": 24,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Electronic"
+                }
+              },
+              {
+                "value": "Indonesian",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Electronic"
+                }
+              }
+            ],
+            "fq": {},
+            "label": "Electronic"
+          },
+          {
+            "value": "eBook",
+            "hits": 10,
+            "field": "format",
+            "items": [
+              {
+                "value": "English",
+                "hits": 8,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "eBook"
+                }
+              },
+              {
+                "value": "Chinese",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "eBook"
+                }
+              },
+              {
+                "value": "Italian",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "eBook"
+                }
+              },
+              {
+                "value": "Latin",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "eBook"
+                }
+              }
+            ],
+            "fq": {},
+            "label": "eBook"
+          },
+          {
+            "value": "Manuscript",
+            "hits": 6,
+            "field": "format",
+            "items": [
+              {
+                "value": "Japanese",
+                "hits": 4,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Manuscript"
+                }
+              },
+              {
+                "value": "English",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Manuscript"
+                }
+              },
+              {
+                "value": "German",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Manuscript"
+                }
+              }
+            ],
+            "fq": {},
+            "label": "Manuscript"
+          },
+          {
+            "value": "Software",
+            "hits": 6,
+            "field": "format",
+            "items": [
+              {
+                "value": "English",
+                "hits": 5,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Software"
+                }
+              },
+              {
+                "value": "Dutch",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Software"
+                }
+              },
+              {
+                "value": "French",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Software"
+                }
+              }
+            ],
+            "fq": {},
+            "label": "Software"
+          },
+          {
+            "value": "Unknown",
+            "hits": 5,
+            "field": "format",
+            "items": [
+              {
+                "value": "English",
+                "hits": 2,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Unknown"
+                }
+              },
+              {
+                "value": "Arabic",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Unknown"
+                }
+              },
+              {
+                "value": "Hungarian",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Unknown"
+                }
+              },
+              {
+                "value": "Persian",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Unknown"
+                }
+              },
+              {
+                "value": "Sindhi",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Unknown"
+                }
+              },
+              {
+                "value": "Sotho",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "Unknown"
+                }
+              }
+            ],
+            "fq": {},
+            "label": "Unknown"
+          },
+          {
+            "value": "SoundDisc",
+            "hits": 2,
+            "field": "format",
+            "items": [
+              {
+                "value": "Croatian",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "SoundDisc"
+                }
+              },
+              {
+                "value": "English",
+                "hits": 1,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "SoundDisc"
+                }
+              }
+            ],
+            "fq": {},
+            "label": "SoundDisc"
+          },
+          {
+            "value": "VideoDisc",
+            "hits": 2,
+            "field": "format",
+            "items": [
+              {
+                "value": "English",
+                "hits": 2,
+                "field": "language_facet",
+                "items": [],
+                "fq": {
+                  "format": "VideoDisc"
+                }
+              }
+            ],
+            "fq": {},
+            "label": "VideoDisc"
+          }
+        ],
+        "label": "Example Pivot Field"
+      },
+      {
+        "name": "example_query_facet_field",
+        "items": [
+          {
+            "value": "years_10",
+            "hits": 4944,
+            "label": "within 10 Years"
+          },
+          {
+            "value": "years_25",
+            "hits": 7897,
+            "label": "within 25 Years"
+          }
+        ],
+        "label": "Example Query Facet Field"
+      }
+    ],
+    "pages": {
+      "current_page": 1,
+      "next_page": 2,
+      "prev_page": null,
+      "total_pages": 988,
+      "limit_value": 10,
+      "offset_value": 0,
+      "total_count": 9872,
+      "first_page?": true,
+      "last_page?": false
+    }
+  }
+}
